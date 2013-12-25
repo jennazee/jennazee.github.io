@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300);
+
+
+body {
+	background-color: #666;
+	font-family: Quicksand;
+	font-weight: 300;
+}
+
+#canvasHolder {
+	width: 400px;
+	height: 660px;
+	margin: 30px auto;
+	box-shadow: 0px 0 10px #333;
+}
+
+h1 {
+	text-align: center;
+	font-weight: normal;
+	margin: 0;
+	padding: 5px;
+}
+
+p {
+	text-align: center;
+}
+
+header {
+	background-color: #f33;
+	padding: 10px;
+	width: 700px;
+	margin: 20px auto;
+	box-shadow: 0px 0 10px #333;
+}
+
+canvas {
+	font-family: Quicksand;
+	font-weight: 300;
+}

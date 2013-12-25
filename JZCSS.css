@@ -1,0 +1,439 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400);
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	min-width: 1200px;
+}
+
+body {
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	background: url('lights1.jpg') black no-repeat 0 300px;
+	line-height: 1.4;
+}
+
+header {
+	width: 38em;
+	margin: 0 auto;
+	font-size: 1.2em;
+}
+
+
+a:hover {
+	color: rgb(75,75,75);
+}
+
+.content-box {
+	clear:none;
+	float:left;
+  	width: 70%;
+  	overflow: auto;
+  	padding: 30px;
+  	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+  	border-radius: 15px;
+  	background: rgb(242,242,242);
+  	margin-top: 25px;
+  	font-size: 1.2em;
+}
+
+#textbox  h3 {
+  	clear: both;
+  	text-align: left;
+  	margin-top: 20px;
+}
+
+h4 {
+	margin: 5px 0;
+}
+
+a {
+	text-decoration: underline;
+	color: black;
+}
+	
+p {
+	text-align:left;
+	padding: 5px 0;
+}
+
+#nav {
+	width: 130px;
+	float:left;
+	margin-top: 30px;
+}
+
+#nav a:hover {
+	color: white;
+}
+
+#nav li {
+	list-style: none;
+	background: rgb(100, 100, 100);
+	font-weight: 200;
+	width: 110px;
+	text-align: center;
+	font-size: 1.5em;
+	padding: 15px 10px;
+	display: inline-block;
+	margin:5px 0;
+	text-decoration: none;
+	color:white;
+}
+
+#nav li a {
+	text-decoration: none;
+	color:white;
+}
+	
+	
+#nav li:hover, #nav li a:hover {
+	background-color: rgb(75, 75, 75);
+	font-weight: 200;
+	cursor: pointer;
+}
+
+#nav li.selected {
+	background: rgb(50,50,50);
+}
+
+.hidden {
+	display: none;
+}
+
+h1 {
+	font-size: 3em;
+	text-align:center;
+	font-weight: 200;
+	padding: 10px 0;
+}
+
+img {
+	clear: both;
+	margin: 10px 15px 10px 0px;
+	float:left;
+}
+
+#me-pic{
+	width: 200px;
+}
+
+.content-box, #triangle {
+	float: left;
+	clear:none;
+	color:black;
+}
+
+#triangle{
+	background: url('triangle.png');
+	width: 45px;
+	height: 68px;
+	margin-top: 35px;
+	display: none;
+}
+
+div.hover-tip {
+	background: #CCFFFF;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border-radius: 150px;
+	padding: 20px;
+	position: absolute;
+	box-shadow: 0px 0px 10px rgb(200,200,200);
+	-webkit-box-shadow: 0px 0px 10px rgb(200,200,200);
+	-moz-box-shadow: 0px 0px 10px rgb(200,200,200);
+	display:none;
+	color: black;
+	font-size: 1.2em;
+}
+
+div.hover-tip p {
+	text-align: center;
+}
+
+#about-hover {
+	left: 105px;
+	top: 85px;
+	width: 150px;
+}
+
+#about-hover:after {
+	content: "";
+	position: absolute;
+	bottom: -30px;
+	left: 15px;
+	border-width: 0 0 50px 30px;
+	border-style: solid;
+	border-color: transparent #ccffff;
+	display: block;
+	width: 0;
+}
+
+
+#blog-hover {
+	left: 135px;
+	top: 375px;
+	width: 150px;
+}
+
+#blog-hover:after {
+	content: "";
+	position: absolute;
+	top: 25px;
+	left: -35px;
+	border-width: 30px 50px 0 0;
+	border-style: solid;
+	border-color: transparent #ccffff;
+	display: block;
+	width: 0;
+}
+	
+#resume-hover {
+	left: 135px;
+	top: 310px;
+}
+
+#work-hover:after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: -30px;
+	border-width:  30px 0 0 50px ;
+	border-style: solid;
+	border-color: #ccffff transparent;
+	display: block;
+	width: 0;
+}
+
+	
+#work-hover {
+	left: 150px;
+	top: 275px;
+}
+
+#resume-hover:after {
+ 	content: "";
+	position: absolute;
+	top: 30px;
+	left: -40px;
+	border-width: 20px 50px 0 0;
+	border-style: solid;
+	border-color: transparent #ccffff;
+	display: block;
+	width: 0;
+}
+
+	
+#contact-hover {
+	left: 90px;
+	top: 565px;
+}
+
+#contact-hover:after {
+	content: "";
+	position: absolute;
+	top: -35px;
+	border-width: 50px 0 0 30px ;
+	border-style: solid;
+	border-color: transparent #ccffff;
+	display: block;
+	width: 0;
+}
+
+#contact-box {
+	position: absolute;
+	top: 450px;
+	left: 175px;
+}
+
+#blog-box {
+	position: absolute;
+	top: 350px;
+	left: 175px;
+}
+
+#work-box, #resume-box {
+	padding-top: 0;
+	margin-bottom: 30px;
+}
+
+#intro {
+	position: relative;
+	top: 200px;
+}
+
+#links ul {
+	text-align: right;
+}
+
+#links a {
+	width: 65px;
+	height: 65px;
+	color: transparent;
+	margin: 15px 15px 0px;
+	display: inline-block;
+}
+
+#links li {
+	list-style: none;
+	display: inline;
+}
+
+/* twitter and linked-in media icons provided by http://vervex.deviantart.com/art/Somacro-29-300DPI-Social-Media-Icons-267955425? */
+#twitter-link {
+	background-image: url(twitter.png);
+}
+
+#linkedin-link {
+	background-image: url(linkedin.png);
+}
+
+/* github icon derivative of http://www.softicons.com/free-icons/social-media-icons/simple-icons-by-dan-leech/github-icon */
+#github-link {
+	background-image: url(github_flat.png);
+}
+
+.circ {
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+}
+
+.circ:hover {
+	background-size: 63px 63px;
+}
+
+#portlist > li {
+	list-style-type: none;
+	border-top-color: #bbb;
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding: 15px 0px;
+	clear: both;
+}
+
+.techs {
+	font-style: italic;	
+}
+
+.port {
+	color: white;
+	text-decoration: none;
+	font-style: normal;
+	display: inline-block;
+	padding: 5px;
+	background: rgb(100, 100, 100);
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.port:hover {
+	background-color: rgb(75, 75, 75);
+	color: white;
+}
+
+blockquote {
+	margin: 10px 0px;
+}
+
+#portlist {
+	margin-left: 0;
+}
+
+.portpic {
+	width: 300px;
+	margin-bottom: 30px;
+}
+
+.res-head {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: black;
+	margin-top: 15px;
+}
+
+#resume-box ul {
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
+.right {
+	float: right;
+}
+
+
+
+@media only screen and (max-width: 1140px) {
+
+html {
+	min-width: 300px;
+}
+
+.content-box {
+	width: auto;
+	margin: 25px;
+}
+
+#intro {
+	position: static;
+	margin: 15px;
+}
+	
+header {
+	text-align: center;
+	width: inherit;
+	font-size: 1em;
+}
+
+#nav {
+	float:left;
+	margin-top: 20px;
+	width: 100%;
+}
+
+#nav li {
+	font-size: 1.25em;
+	margin-bottom: 0;
+	width: 19%;
+	padding: 15px 0px;
+}
+
+div.hover-tip {
+	display: none;
+}
+
+#links {
+	width: 270px;
+	margin: 10px auto;
+}
+
+#links a {
+	margin: 10px;
+}
+
+img {
+	float: none;
+	display: block;
+	margin: 10px auto;
+}
+
+#textbox p, #textbox li {
+	font-size: 12pt;
+}
+
+#blog-box, #contact-box {
+	position: static;
+}
+
+.right {
+	float: none;
+	display: block;
+}
+
+
+}
