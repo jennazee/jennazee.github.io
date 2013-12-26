@@ -30,23 +30,23 @@ a:hover {
 }
 
 .content-box {
-	clear:none;
+	clear: none;
 	float:left;
-  	width: 70%;
-  	overflow: auto;
-  	padding: 30px;
-  	-webkit-border-radius: 15px;
+	width: 70%;
+	overflow: auto;
+	padding: 30px;
+	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
-  	border-radius: 15px;
-  	background: rgb(242,242,242);
-  	margin-top: 25px;
-  	font-size: 1.2em;
+	border-radius: 15px;
+	background: rgb(242,242,242);
+	margin-top: 25px;
+	font-size: 1.2em;
 }
 
 #textbox  h3 {
-  	clear: both;
-  	text-align: left;
-  	margin-top: 20px;
+	clear: both;
+	text-align: left;
+	margin-top: 20px;
 }
 
 h4 {
@@ -57,7 +57,7 @@ a {
 	text-decoration: underline;
 	color: black;
 }
-	
+
 p {
 	text-align:left;
 	padding: 5px 0;
@@ -91,8 +91,8 @@ p {
 	text-decoration: none;
 	color:white;
 }
-	
-	
+
+
 #nav li:hover, #nav li a:hover {
 	background-color: rgb(75, 75, 75);
 	font-weight: 200;
@@ -130,7 +130,7 @@ img {
 	color:black;
 }
 
-#triangle{
+#triangle {
 	background: url('triangle.png');
 	width: 45px;
 	height: 68px;
@@ -193,7 +193,7 @@ div.hover-tip p {
 	display: block;
 	width: 0;
 }
-	
+
 #resume-hover {
 	left: 135px;
 	top: 310px;
@@ -211,7 +211,6 @@ div.hover-tip p {
 	width: 0;
 }
 
-	
 #work-hover {
 	left: 150px;
 	top: 275px;
@@ -229,7 +228,7 @@ div.hover-tip p {
 	width: 0;
 }
 
-	
+
 #contact-hover {
 	left: 90px;
 	top: 565px;
@@ -318,7 +317,7 @@ div.hover-tip p {
 }
 
 .techs {
-	font-style: italic;	
+	font-style: italic;
 }
 
 .port {
@@ -366,74 +365,69 @@ blockquote {
 	float: right;
 }
 
-
-
 @media only screen and (max-width: 1140px) {
+	html {
+		min-width: 300px;
+	}
 
-html {
-	min-width: 300px;
-}
+	.content-box {
+		width: auto;
+		margin: 25px;
+	}
 
-.content-box {
-	width: auto;
-	margin: 25px;
-}
+	#intro {
+		position: static;
+		margin: 15px;
+	}
 
-#intro {
-	position: static;
-	margin: 15px;
-}
-	
-header {
-	text-align: center;
-	width: inherit;
-	font-size: 1em;
-}
+	header {
+		text-align: center;
+		width: inherit;
+		font-size: 1em;
+	}
 
-#nav {
-	float:left;
-	margin-top: 20px;
-	width: 100%;
-}
+	#nav {
+		float: left;
+		margin-top: 20px;
+		width: 100%;
+	}
 
-#nav li {
-	font-size: 1.25em;
-	margin-bottom: 0;
-	width: 19%;
-	padding: 15px 0px;
-}
+	#nav li {
+		font-size: 1.25em;
+		margin-bottom: 0;
+		width: 19%;
+		padding: 15px 0px;
+	}
 
-div.hover-tip {
-	display: none;
-}
+	div.hover-tip {
+		display: none;
+	}
 
-#links {
-	width: 270px;
-	margin: 10px auto;
-}
+	#links {
+		width: 270px;
+		margin: 10px auto;
+	}
 
-#links a {
-	margin: 10px;
-}
+	#links a {
+		margin: 10px;
+	}
 
-img {
-	float: none;
-	display: block;
-	margin: 10px auto;
-}
+	img {
+		float: none;
+		display: block;
+		margin: 10px auto;
+	}
 
-#textbox p, #textbox li {
-	font-size: 12pt;
-}
+	#textbox p, #textbox li {
+		font-size: 12pt;
+	}
 
-#blog-box, #contact-box {
-	position: static;
-}
+	#blog-box, #contact-box {
+		position: static;
+	}
 
-.right {
-	float: none;
-	display: block;
-}
-
-
+	.right {
+		float: none;
+		display: block;
+	}
 }

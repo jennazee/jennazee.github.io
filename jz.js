@@ -70,7 +70,7 @@ _gaq.push(['_trackPageview']);
         var ename = $(e.target).attr('id');
         $('.selected').removeClass('selected');
         $(e.target).addClass('selected');
-        for (var i=0; i<tab_names.length; i++) {
+        for (var i = 0; i < tab_names.length; i++) {
           var tname = tab_names[i];
           if (tname === ename) {
             $('#' + tname + '-box').removeClass('hidden')
@@ -87,7 +87,7 @@ _gaq.push(['_trackPageview']);
           if ($('#intro').css('top')!== '0px') {
             $('#intro').animate({top: '0px'},500)
           }
-          $('#triangle').animate({marginTop:self.tabs[ename]},500);
+          $('#triangle').animate({marginTop:self.tabs[ename]}, 500);
           $('#' + ename + '-box').animate({width: self.boxWidth}, 500);
         }
       }
