@@ -73,7 +73,7 @@ p {
 	color: white;
 }
 
-#nav li {
+.nav-button {
 	list-style: none;
 	background: rgb(100, 100, 100);
 	font-weight: 200;
@@ -87,19 +87,19 @@ p {
 	color:white;
 }
 
-#nav li a {
+.nav-button > a {
 	text-decoration: none;
 	color:white;
 }
 
 
-#nav li:hover, #nav li a:hover {
+.nav-button:hover, .nav-buttin > a:hover {
 	background-color: rgb(75, 75, 75);
 	font-weight: 200;
 	cursor: pointer;
 }
 
-#nav li.selected {
+.nav-button.selected {
 	background: rgb(50,50,50);
 }
 
@@ -153,7 +153,7 @@ div.hover-tip {
 	font-size: 1.2em;
 }
 
-div.hover-tip p {
+div.hover-tip > p {
 	text-align: center;
 }
 
@@ -390,13 +390,15 @@ blockquote {
 		float: left;
 		margin-top: 20px;
 		width: 100%;
+		text-align: center;
 	}
 
-	#nav li {
+	.nav-button {
 		font-size: 1.25em;
 		margin-bottom: 0;
 		width: 19%;
 		padding: 15px 0px;
+		min-width: 75px;
 	}
 
 	div.hover-tip {
