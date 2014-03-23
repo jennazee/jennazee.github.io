@@ -10,15 +10,7 @@ _gaq.push(['_trackPageview']);
 
 (function() {
   function Page() {
-    this.boxWidth = '70%';
     this.skinny = window.innerWidth <= 1140;
-    this.tabs = {
-      'about': '35px',
-      'work': '110px',
-      'contact': '325px',
-      'blog': '225px',
-      'resume': '180px'
-    };
   }
 
   Page.prototype.init = function() {
@@ -29,13 +21,14 @@ _gaq.push(['_trackPageview']);
   }
 
   Page.prototype.setupHovers = function () {
-    $('#nav').on('mouseover', 'li', function(e) {
+    $nav = $('#nav');
+    $nav.on('mouseover', 'li', function(e) {
       var name = $(e.target).attr('id');
-      $('#' + name + '-hover').show();
+      $('#' + name + '-hover').removeClass('hidden');
     });
-    $('#nav').on('mouseout', 'li', function(e) {
+    $nav.on('mouseout', 'li', function(e) {
       var name = $(e.target).attr('id');
-      $('#' + name + '-hover').hide();
+      $('#' + name + '-hover').addClass('hidden');
     })
   }
 
@@ -47,48 +40,35 @@ _gaq.push(['_trackPageview']);
     var self = this;
     if (window.innerWidth > 1140) {
       this.skinny = false;
-      var sel = $('.selected');
-      if (sel[0]) {
+      var $sel = $('.selected');
+      if ($sel[0]) {
         var sel_name  = $('.selected').attr('id');
-        $('#triangle').css('top', self.tabs[sel_name]).show();
+        $('#triangle').addClass('at-' + sel_name).show();
       }
-      $('#intro').css('top', '0px');
+      $('#intro').addClass('at-top');
       self.setupHovers();
     } else {
       this.skinny = true;
-      $('#triangle').hide();
+      $('#triangle').addClass('hidden');
       self.unsetupHovers();
     }
   }
 
   Page.prototype.setupTabs = function() {
     var self = this;
-    var tab_names = [];
-    for (var k in self.tabs) tab_names.push(k);
     $('#nav').on('click', 'li', function(e) {
       if (!($(e.target).hasClass('selected'))) {
         var ename = $(e.target).attr('id');
         $('.selected').removeClass('selected');
         $(e.target).addClass('selected');
-        for (var i = 0; i < tab_names.length; i++) {
-          var tname = tab_names[i];
-          if (tname === ename) {
-            $('#' + tname + '-box').removeClass('hidden')
-          } else {
-            var $curr = $('#' + tname + '-box');
-            if (!($curr.hasClass('hidden'))) {
-              $curr.addClass('hidden');
-            }
-          }
-        }
+        $('.content-box').addClass('hidden');
+        $('#' + ename + '-box').removeClass('hidden');
         if (!self.skinny) {
-          $('#' + ename + '-box').css('width', '0');
-          $('#triangle').css('display', 'block');
-          if ($('#intro').css('top')!== '0px') {
-            $('#intro').animate({top: '0px'},500)
+          $intro = $('#intro');
+          if (!$intro.hasClass('at-top')) {
+            $intro.addClass('at-top')
           }
-          $('#triangle').animate({marginTop:self.tabs[ename]}, 500);
-          $('#' + ename + '-box').animate({width: self.boxWidth}, 500);
+          $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + ename);
         }
       }
     })

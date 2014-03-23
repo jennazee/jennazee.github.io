@@ -24,14 +24,23 @@ header {
 	font-size: 1.2em;
 }
 
+#intro {
+	position: relative;
+	top: 200px;
+	-webkit-transition: top 500ms;
+  transition: top 500ms;
+}
+
+#intro.at-top {
+	top: 0px;
+}
+
 
 a:hover {
 	color: rgb(75,75,75);
 }
 
 .content-box {
-	clear: none;
-	float:left;
 	width: 70%;
 	overflow: auto;
 	padding: 30px;
@@ -41,6 +50,9 @@ a:hover {
 	background: rgb(242,242,242);
 	margin-top: 25px;
 	font-size: 1.2em;
+	-webkit-transition: width 500ms;
+  transition: width 500ms;
+  box-sizing: border-box;
 }
 
 #textbox  h3 {
@@ -92,7 +104,6 @@ p {
 	color:white;
 }
 
-
 .nav-button:hover, .nav-buttin > a:hover {
 	background-color: rgb(75, 75, 75);
 	font-weight: 200;
@@ -126,17 +137,24 @@ img {
 
 .content-box, #triangle {
 	float: left;
-	clear:none;
-	color:black;
+	clear: none;
+	color: black;
 }
 
 #triangle {
 	background: url('triangle.png');
 	width: 45px;
 	height: 68px;
-	margin-top: 35px;
-	display: none;
+	-webkit-transition: margin-top 500ms;
+  transition: margin-top 500ms;
 }
+
+/* #triangle placements */
+.at-about {margin-top: 35px;}
+.at-work {margin-top: 110px;}
+.at-contact {margin-top: 325px;}
+.at-blog {margin-top: 250px;}
+.at-resume {margin-top: 180px;}
 
 div.hover-tip {
 	background: #CCFFFF;
@@ -148,7 +166,6 @@ div.hover-tip {
 	box-shadow: 0px 0px 10px rgb(200,200,200);
 	-webkit-box-shadow: 0px 0px 10px rgb(200,200,200);
 	-moz-box-shadow: 0px 0px 10px rgb(200,200,200);
-	display:none;
 	color: black;
 	font-size: 1.2em;
 }
@@ -260,11 +277,6 @@ div.hover-tip > p {
 #work-box, #resume-box {
 	padding-top: 0;
 	margin-bottom: 30px;
-}
-
-#intro {
-	position: relative;
-	top: 200px;
 }
 
 #links ul {
