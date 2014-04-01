@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/jenna
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jennazeigen.com
+  * I am jenna (https://keybase.io/jenna) on keybase.
+  * I have a public key with fingerprint F6EF 4A1B 2567 965A 383C  D30F 2EFC 3270 C625 EFD8
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "f6ef4a1b2567965a383cd30f2efc3270c625efd8",
+            "host": "keybase.io",
+            "key_id": "2efc3270c625efd8",
+            "uid": "e9278d0c7938f86b567e258e41e33900",
+            "username": "jenna"
+        },
+        "service": {
+            "hostname": "jennazeigen.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396326016,
+    "expire_in": 157680000,
+    "prev": "a33675cab8cee2db5eb9538fdc7cf987b120dbd9f9c05c0612fd8d38c5cb1f2d",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.1
+Comment: https://keybase.io/crypto
+
+yMHnAnicbVFdSBRbHN+96266YcQaVAoSA9WWJvPhfGJLYiJeoYfMoryxzpw5szt+
+zGwz46otRqBe4/oSGV6k9EpLVLAXNJVUIqSsxN0g7AvKh+ol6xbUg6gYrGekoIc7
+L8P5fZ7/+c9kuxxe577OzM+pub8qnMnpb82OaiFwPoZJutyGCTGsAW78FFULQSNi
+qJqFCZjCQKVYJCSSZlieoUWKo4BM4QoJFUCRLA4YkoaKzGGFWFg3bQeKkUQTFqk6
+wtAhqMoI/R998wYBeZLlZBywPMUpHCOhHkjSHCwmIEXxOG4LTWhoYhNE6nqoaSLW
+XoghKKoCBMU2en+lz0I1BLUioDchb8TQLR3ojYgMW1ZEsL1WW8QWt0Ap+CMmKKma
+jOZGhig0TFXXMIFASmCpdi5B8QxFMjjBFGKwNaIaMKjaCpplOBx9dg2MokiRohiW
+BqLEAQhJWaKhxNNoLhmwQOE5ViJIXJZkXuEBTgOcIUj0FDLFARpIhELKqN+EZzQd
+E1h0TTGEIk01pIlWswGx9vvTf2Q4nF6Hx/2bvTmHN2vrz30ODG9Klw821Prm1pI9
+Dsw/GHLU1JvRkv9+B0sdwpLa9ez95ZX8vxe23LvTW7V6y5z46qu7MO+LF6TcrkiW
+5268op9LyL5zrdHGlXB8visVqivLHhej/mtXpqL5Y6Xlbx75xgV/R83DvES4tsA8
+5S+YHa3tXc5pWv2Saph3d9/e3XLz+tttQ+6hmf3HSzKTr0vLKgNFnotPqw5+2tzT
+1npjYBb/Z831cvjJyN5dIweeTzrNhVeY90MsbTWmjy0udJ8cTf57uCcrd8/23Pyj
+j3cOjlVnpD4mUoH+ypzF5bwdmYlOY3QiNnJ1OXzoRTju6jvtnko/iFw6QQeOfA9M
+vvP82bcOEwgR0w==
+=2jy1
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jenna
+
+==================================================================
+
