@@ -26,10 +26,10 @@ To claim this, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1396326016,
+    "ctime": 1396492900,
     "expire_in": 157680000,
-    "prev": "a33675cab8cee2db5eb9538fdc7cf987b120dbd9f9c05c0612fd8d38c5cb1f2d",
-    "seqno": 7,
+    "prev": "1c239ec56cf0f49bef528b825878bd70a70f7e61253e1b7d5a717c073dbf1ca8",
+    "seqno": 9,
     "tag": "signature"
 }
 
@@ -39,22 +39,22 @@ with the aforementioned key, yielding the PGP signature:
 Version: Keybase OpenPGP v0.1.1
 Comment: https://keybase.io/crypto
 
-yMHnAnicbVFdSBRbHN+96266YcQaVAoSA9WWJvPhfGJLYiJeoYfMoryxzpw5szt+
-zGwz46otRqBe4/oSGV6k9EpLVLAXNJVUIqSsxN0g7AvKh+ol6xbUg6gYrGekoIc7
-L8P5fZ7/+c9kuxxe577OzM+pub8qnMnpb82OaiFwPoZJutyGCTGsAW78FFULQSNi
-qJqFCZjCQKVYJCSSZlieoUWKo4BM4QoJFUCRLA4YkoaKzGGFWFg3bQeKkUQTFqk6
-wtAhqMoI/R998wYBeZLlZBywPMUpHCOhHkjSHCwmIEXxOG4LTWhoYhNE6nqoaSLW
-XoghKKoCBMU2en+lz0I1BLUioDchb8TQLR3ojYgMW1ZEsL1WW8QWt0Ap+CMmKKma
-jOZGhig0TFXXMIFASmCpdi5B8QxFMjjBFGKwNaIaMKjaCpplOBx9dg2MokiRohiW
-BqLEAQhJWaKhxNNoLhmwQOE5ViJIXJZkXuEBTgOcIUj0FDLFARpIhELKqN+EZzQd
-E1h0TTGEIk01pIlWswGx9vvTf2Q4nF6Hx/2bvTmHN2vrz30ODG9Klw821Prm1pI9
-Dsw/GHLU1JvRkv9+B0sdwpLa9ez95ZX8vxe23LvTW7V6y5z46qu7MO+LF6TcrkiW
-5268op9LyL5zrdHGlXB8visVqivLHhej/mtXpqL5Y6Xlbx75xgV/R83DvES4tsA8
-5S+YHa3tXc5pWv2Saph3d9/e3XLz+tttQ+6hmf3HSzKTr0vLKgNFnotPqw5+2tzT
-1npjYBb/Z831cvjJyN5dIweeTzrNhVeY90MsbTWmjy0udJ8cTf57uCcrd8/23Pyj
-j3cOjlVnpD4mUoH+ypzF5bwdmYlOY3QiNnJ1OXzoRTju6jvtnko/iFw6QQeOfA9M
-vvP82bcOEwgR0w==
-=2jy1
+yMHmAnicbVFfSBRbGB9Xu9bCtWAzMoxgunbJVpmZs/NvqSTUEqMISi2TtpkzZ3Yn
+c2adnd3cNq9CqRShgj0IpZEQRaZlvVQGakaQ2R8xIwmSIq+EmQgLEgV6Rgp66Lwc
+zu/f933ne/x3IuFM2Hxm+ZfhoXO7Ep71z4WJ/VuHlBgpG0qU9MbIcrR0qZruR2bQ
+1HSL9JIqh1SPRMsMy/Eix0pAAFABlMogFQKGpyDHsEhVBNJNBoyQ7cAxshRC2ZqB
+MfzwaQpG/6APLxFIZHhBoSAvAkEVOBnXQQwrIA+NABApyhaGkKlLFQirjyFdl8hq
+N4mhiAYxFFuq+zt9Eml+pGdDowJ7g6ZhGdA4jsmAZQW9tteKBm3xCST7fsb4ZE1X
+8NzYEEFmSDN00ktjJbQ0O5cGIucRGdyNm0RVQc1EPs1WsDwnUPjYZVAER9KQASKC
+LAdVSvWIMlJZRpAFPA8vyApPSTyl8oijGRYgWuYVVuJpHlI8UGSVhpL9KyFUqRuk
+V8RtSn4cGdL8umSFTURWP+ovSyISnMRfyxz25gjnilW/9skVJC9Uj7PjLbfXtP6Y
+deQNNXds+T+zMDDcOzDzasxZfzon5nDV1nwenVhfYhEHLh0uHejyzW4kfI1Np+63
+CebbkTdlDTPuDODf2zExeJaYTEqBafNf2+PX49+j3+KTpd3l013hzp59O4vz1IW7
+RVrTCw3M5xzprS10tNcTh1YL5VZaT/xD11RW01G5KJ6x0PmPX7ywbVPdjX9zR6t8
+K/M+RScaUwa8ezpc50cOrs1w5z9Ip3ZfnC5Oz3ddrcjSb1LJsTslpfe6U2tSK6+V
+Zbnq+q4Mmi+fX34Htj/9TxgT5yK5r2camqeGH95q+WiNbejb0ZYdSDQyE1vR+3Xh
+AnnwySLE0ROd
+=LDJh
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -63,4 +63,3 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/jenna
 
 ==================================================================
-
