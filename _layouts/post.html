@@ -1,9 +1,11 @@
 ---
 layout: blog_temp_one
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<div class="article-box content-box">
+  <h2>{{ page.title }}</h2>
+  <p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-{{ content }}
+  <div class="post">
+  {{ content }}
+  </div>
 </div>

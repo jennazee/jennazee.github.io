@@ -7,6 +7,7 @@
     var self = this;
     if (!this.skinny) self.setupHovers();
     $(window).resize(function() {self.onResize.call(self)});
+    this.setupTabs();
   }
 
   SimplePage.prototype.onResize = function() {
@@ -31,6 +32,7 @@
     $nav = $('#nav');
     $nav.on('mouseover', 'li', function(e) {
       var name = $(e.target).attr('id');
+      console.log($('#' + name + '-hover')[0])
       $('#' + name + '-hover').removeClass('hidden');
     });
     $nav.on('mouseout', 'li', function(e) {
@@ -41,6 +43,15 @@
 
   SimplePage.prototype.unsetupHovers = function() {
     $('#nav').off('mouseover mouseout');
+  }
+
+  SimplePage.prototype.setupTabs = function() {
+    var self = this;
+    $('#nav').on('click', 'li', function(e) {
+      var ename = $(e.target).attr('id');
+      console.log(ename);
+      location.href = '/#' + ename;
+    })
   }
 
   $(document).ready(function() {

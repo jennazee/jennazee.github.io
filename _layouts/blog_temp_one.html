@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="JZCSS.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-  <script src="blog_page.js" type="text/javascript"></script>
+  <script src="simple_page.js" type="text/javascript"></script>
   <script>
     console.log("Oh hai there! Nice to see you checkin' me out")
   </script>
@@ -22,7 +22,7 @@
 
 <div id="nav">
   <ul>
-    <li class="nav-button" id="about"><a href="/#about">About</a></li>
+    <li class="nav-button" id="about">About</li>
     <li class="nav-button" id="work"><a href="/#work">Work</a></li>
     <li class="nav-button" id="resume"><a href="/#resume">Résumé</a></li>
     <li class="nav-button" id="blog"><a href="/#blog">Blogs</a></li>
@@ -34,7 +34,38 @@
 <div id="textbox">
   <div id="triangle" class="at-blog"></div>
 
-  <div id="article-box" class="content-box">{{ content }}</div>
+  <div class="blog-index">
+    <h3>Moar Blog Posts!</h3>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {{ content }}
+</div>
+
+<div id="about-hover" class="hover-tip hidden">
+  <p>Find out what makes me me!</p>
+</div>
+
+<div id="blog-hover" class="hover-tip hidden">
+  <p>I sometimes write about interesting things!</p>
+</div>
+
+<div id="work-hover" class="hover-tip hidden">
+  <p>I make cool things!</p>
+</div>
+
+<div id="resume-hover" class="hover-tip hidden">
+  <p>Jenna fact sheet!</p>
+</div>
+
+<div id="contact-hover" class="hover-tip hidden">
+  <p>Send me email!</p>
 </div>
 
 </body>

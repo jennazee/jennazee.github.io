@@ -21,6 +21,7 @@ _gaq.push(['_trackPageview']);
 
     if (location.hash.length) {
       this.goToSection(location.hash.split('#')[1])
+      window.scrollTo(0, 0);
     }
   }
 
@@ -72,7 +73,6 @@ _gaq.push(['_trackPageview']);
       if (hashSplits[1]) {
         self.goToSection(hashSplits[1]);
       } else {
-        console.log('go to inital')
         self.goToSection('initial')
       }
     });
@@ -80,7 +80,6 @@ _gaq.push(['_trackPageview']);
 
   Page.prototype.goToSection = function (section) {
     if (section == 'initial') {
-      console.log('went to inital')
       $('.content-box').addClass('hidden');
       $('#triangle').addClass('hidden');
       $('#intro').removeClass('at-top');
