@@ -26,7 +26,7 @@ function ZPiece() {
 	this.layoutArray = sqArray;
 
  }
- 
+
 ZPiece.prototype = new Piece(this.game);
 
 ZPiece.prototype.constructor = ZPiece;

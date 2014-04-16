@@ -21,7 +21,7 @@ function Piece(game){
 	sqArray[3] = Array();
 	sqArray[3][0]=0;
 	sqArray[3][1]=0;
-	
+
 	this.color='#333';
 
 	this.sqArray = sqArray;
@@ -30,7 +30,7 @@ function Piece(game){
 
 Piece.prototype.draw = function(){
 	var canvas = $('#mainCanvas')[0];
-	this.ctx = canvas.getContext('2d');	
+	this.ctx = canvas.getContext('2d');
 	this.ctx.strokeStyle = '#191919';
 	this.ctx.lineWidth = 2;
 	this.ctx.fillStyle = this.color;
@@ -173,7 +173,7 @@ Piece.prototype.stick=function(){
 		board[this.sqArray[i][0]][this.sqArray[i][1]].setLocation(this.sqArray[i][0], this.sqArray[i][1]);
 	}
 	currPiece = new this.game.pieceFactory(this.game);
-	if (!lost){	
+	if (!lost){
 		currPiece.setLocation(9,1);
 		this.game.draw();
 	}

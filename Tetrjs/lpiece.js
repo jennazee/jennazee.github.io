@@ -26,7 +26,7 @@ function LPiece(game) {
 	this.layoutArray = sqArray;
 
  }
- 
+
 LPiece.prototype = new Piece(this.game);
 
 LPiece.prototype.constructor = LPiece;

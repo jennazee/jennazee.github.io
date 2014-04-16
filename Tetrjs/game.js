@@ -34,17 +34,17 @@ Game.prototype.init = function(){
 		gamePanelHeight = $('#mainCanvas').height()-scorePanelHeight;
 		rows = gamePanelHeight/sqWidth+1;
 		cols= panelWidth/sqWidth;
-		
+
 		//game panel
 		this.ctx.fillStyle = '#191919';
 		this.ctx.fillRect(0, 0, panelWidth, gamePanelHeight);
-		
+
 
 		//make the pieces array. It's empty until pieces start sticking
-		for (var j=0; j<rows; j++){ 
+		for (var j=0; j<rows; j++){
 			board[j]= new Array();
 		}
-		
+
 		for (var y=0; y<rows; y++){
 			board[0][y]=new BorderSq();
 			board[0][y].setLocation(0,y);
@@ -142,7 +142,7 @@ Game.prototype.draw=function() {
 			this.ctx.fillText('Click to start a new game.', this.dialog.x + 55, this.dialog.y+95, 230);
 			return;
 		}
-	}	
+	}
 }
 Game.prototype.pieceFactory=function(game) {
 	switch (Math.floor(Math.random()*7)){
@@ -181,7 +181,7 @@ Game.prototype.checkLines=function() {
 			}
 			else {
 				numFull++;
-			} 
+			}
 		}
 		if (numFull===cols-2){
 			numCleared++;

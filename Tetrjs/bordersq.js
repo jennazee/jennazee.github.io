@@ -1,7 +1,7 @@
 function BorderSq() {
 	this.width = 20;
  	this.color = '#333';
- 	
+
  	var sqArray = Array();
 	sqArray[0] =Array();
 	sqArray[0][0] = 0;

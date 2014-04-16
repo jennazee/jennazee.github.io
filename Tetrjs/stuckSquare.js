@@ -1,7 +1,7 @@
 function StuckSquare(color) {
 	this.width = 20;
  	this.color = color;
- 	
+
  	var sqArray = Array();
 	sqArray[0] =Array();
 	sqArray[0][0] = 0;

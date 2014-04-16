@@ -26,7 +26,7 @@ function JPiece(game) {
 	this.layoutArray = sqArray;
 
  }
- 
+
 JPiece.prototype = new Piece(this.game);
 
 JPiece.prototype.constructor = JPiece;

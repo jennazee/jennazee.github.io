@@ -26,7 +26,7 @@ function OPiece(game) {
 	this.layoutArray = sqArray;
 
  }
- 
+
 OPiece.prototype = new Piece(this.game);
 
 OPiece.prototype.constructor = OPiece;

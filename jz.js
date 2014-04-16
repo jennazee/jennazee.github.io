@@ -18,6 +18,10 @@ _gaq.push(['_trackPageview']);
     if (!this.skinny) self.setupHovers();
     $(window).resize(function() {self.onResize.call(self)});
     this.setupTabs();
+
+    if (location.hash.length) {
+      this.goToSection(location.hash.split('#')[1])
+    }
   }
 
   Page.prototype.setupHovers = function () {
@@ -59,19 +63,30 @@ _gaq.push(['_trackPageview']);
     $('#nav').on('click', 'li', function(e) {
       if (!($(e.target).hasClass('selected'))) {
         var ename = $(e.target).attr('id');
-        $('.selected').removeClass('selected');
-        $(e.target).addClass('selected');
-        $('.content-box').addClass('hidden');
-        $('#' + ename + '-box').removeClass('hidden');
-        if (!self.skinny) {
-          $intro = $('#intro');
-          if (!$intro.hasClass('at-top')) {
-            $intro.addClass('at-top')
-          }
-          $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + ename);
-        }
+        self.goToSection(ename);
+        history.pushState(null, null, '#' + ename);
       }
     })
+    window.addEventListener("popstate", function(e) {
+      var hashSplits = location.hash.split('#');
+      if (hashSplits[1]) {
+        self.goToSection(hashSplits[1]);
+      }
+    });
+  }
+
+  Page.prototype.goToSection = function (section) {
+    $('.selected').removeClass('selected');
+    $('#' + section).addClass('selected');
+    $('.content-box').addClass('hidden');
+    $('#' + section + '-box').removeClass('hidden');
+    if (!this.skinny) {
+      $intro = $('#intro');
+      if (!$intro.hasClass('at-top')) {
+        $intro.addClass('at-top')
+      }
+      $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + section);
+    }
   }
 
   $(document).ready(function() {
