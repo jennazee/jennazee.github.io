@@ -1,0 +1,13 @@
+---
+layout: blog_temp_one
+---
+{% for post in site.posts %}
+  <div class="article-box content-box {% unless forloop.first %}subsequent{% endunless %}">
+    <h2>{{ post.title }}</h2>
+    <p class="meta">{{ post.date | date_to_string }}</p>
+
+    <div class="post">
+    {{ post.content }}
+    </div>
+  </div>
+{% endfor %}
