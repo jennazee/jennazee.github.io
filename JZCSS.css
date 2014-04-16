@@ -377,6 +377,11 @@ blockquote {
 	float: right;
 }
 
+/* blog specifix */
+.blog-line {
+	text-align: center;
+}
+
 @media only screen and (max-width: 1140px) {
 	html {
 		min-width: 300px;
