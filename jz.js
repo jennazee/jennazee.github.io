@@ -21,6 +21,8 @@ _gaq.push(['_trackPageview']);
 
     if (location.hash.length) {
       this.goToSection(location.hash.split('#')[1])
+    } else {
+      this.goToSection('initial')
     }
   }
 
@@ -76,16 +78,22 @@ _gaq.push(['_trackPageview']);
   }
 
   Page.prototype.goToSection = function (section) {
-    $('.selected').removeClass('selected');
-    $('#' + section).addClass('selected');
-    $('.content-box').addClass('hidden');
-    $('#' + section + '-box').removeClass('hidden');
-    if (!this.skinny) {
-      $intro = $('#intro');
-      if (!$intro.hasClass('at-top')) {
-        $intro.addClass('at-top')
+    if (section == 'initial') {
+      $('.content-box').addClass('hidden');
+      $('#triangle').addClass('hidden');
+      $('#intro').removeClass('at-top');
+    } else {
+      $('.selected').removeClass('selected');
+      $('#' + section).addClass('selected');
+      $('.content-box').addClass('hidden');
+      $('#' + section + '-box').removeClass('hidden');
+      if (!this.skinny) {
+        $intro = $('#intro');
+        if (!$intro.hasClass('at-top')) {
+          $intro.addClass('at-top')
+        }
+        $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + section);
       }
-      $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + section);
     }
   }
 
