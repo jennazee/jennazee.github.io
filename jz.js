@@ -10,7 +10,8 @@ _gaq.push(['_trackPageview']);
 
 (function() {
   function Page() {
-    this.skinny = window.innerWidth <= 1140;
+    this.SKINNY_LIMIT = 1140;
+    this.skinny = window.innerWidth <= this.SKINNY_LIMIT;
   }
 
   Page.prototype.init = function() {
@@ -43,7 +44,7 @@ _gaq.push(['_trackPageview']);
 
   Page.prototype.onResize = function() {
     var self = this;
-    if (window.innerWidth > 1140) {
+    if (window.innerWidth > this.SKINNY_LIMIT) {
       this.skinny = false;
       var $sel = $('.selected');
       if ($sel[0]) {

@@ -1,6 +1,7 @@
 (function() {
   function SimplePage() {
-    this.skinny = window.innerWidth <= 1140;
+    this.SKINNY_LIMIT = 1140;
+    this.skinny = window.innerWidth <= this.SKINNY_LIMIT;
   }
 
   SimplePage.prototype.init = function() {
@@ -12,7 +13,7 @@
 
   SimplePage.prototype.onResize = function() {
     var self = this;
-    if (window.innerWidth > 1140) {
+    if (window.innerWidth > this.SKINNY_LIMIT) {
       this.skinny = false;
       var $sel = $('.selected');
       if ($sel[0]) {
@@ -49,7 +50,6 @@
     var self = this;
     $('#nav').on('click', 'li', function(e) {
       var ename = $(e.target).attr('id');
-      console.log(ename);
       location.href = '/#' + ename;
     })
   }
