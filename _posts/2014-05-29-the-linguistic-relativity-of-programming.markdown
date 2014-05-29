@@ -3,7 +3,7 @@ layout: post
 title:  "The Linguistic Relativity of Programming"
 ---
 
-[This is a blog post expositing a talk I gave at BrooklynJS on May 15th, 2014. The slides can be found at bit.ly/bk-js.]
+[This is a blog post expositing a talk I gave at BrooklynJS on May 15th, 2014. The slides can be found at [bit.ly/bk-js](bit.ly/bk-js).]
 
 The hypothesis of linguistic relativity is a concept in linguistics that suggests that the languages we speak affect the way we think. While this viewpoint remains controversial across the academic linguistic community, it is easy for even someone not trained in linguistics to buy the idea. For example, it's easy to appreciate that the words we have for colors carve a continuous color spectrum into discrete sections, which then influence the way we think about the color space.
 
