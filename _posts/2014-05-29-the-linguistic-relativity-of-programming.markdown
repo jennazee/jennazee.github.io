@@ -3,7 +3,7 @@ layout: post
 title:  "The Linguistic Relativity of Programming"
 ---
 
-[This is a blog post expositing a talk I gave at BrooklynJS on May 15th, 2014. The slides can be found at [bit.ly/bk-js](bit.ly/bk-js).]
+[This is a blog post expositing a talk I gave at BrooklynJS on May 15th, 2014. The slides can be found at [bit.ly/bk-js](http://bit.ly/bk-js).]
 
 The hypothesis of linguistic relativity is a concept in linguistics that suggests that the languages we speak affect the way we think. While this viewpoint remains controversial across the academic linguistic community, it is easy for even someone not trained in linguistics to buy the idea. For example, it's easy to appreciate that the words we have for colors carve a continuous color spectrum into discrete sections, which then influence the way we think about the color space.
 
@@ -13,7 +13,7 @@ Now I'm not the first person to think about how programming languages influence 
 
 >”Programming languages, because they were designed for the purpose of directing computers, offer important advantages as tools of thought. Not only are they universal…, but they are also executable and unambiguous.”
 
-Furthermore, Paul Graham's 2001 talk turned 2003 article entitled [“Beating the Averages”](bit.ly/blub-paradox) included his infamous Blub Paradox also touches upon the idea that the programming languages we know constrain the way we are capable about thinking about programming. The main argument he makes, which he considers controversial, is that some programming languages are more powerful than others. The article is in large part about how using Lisp afforded him a competitive advantage over other companies because it was that much faster, that much more powerful. In his argument, he supposes a made-up, very average programming language called Blub. Blub programmers look down upon programming languages that are supposedly less powerful than Blub, thinking to themselves how silly those poor programmers are, how could they ever get by using such a weak language. It doesn't even have feature x!. Programmers in more powerful languages than Blub, such as Lisps, look down upon Blub programmers the same way. However, Blub programmers look up at more powerful languages like Lisp and don't see what all the fuss is about. They see a language of equal power to Blub but with some extra features they don't understand, and if they don't understand them, how useful could they be! They get along just fine with Blub, are able to solve all the problems they have as efficiently as they need. Graham goes on to evoke specific examples from his experiences:
+Furthermore, Paul Graham's 2001 talk turned 2003 article entitled [“Beating the Averages”](http://bit.ly/blub-paradox) included his infamous Blub Paradox also touches upon the idea that the programming languages we know constrain the way we are capable about thinking about programming. The main argument he makes, which he considers controversial, is that some programming languages are more powerful than others. The article is in large part about how using Lisp afforded him a competitive advantage over other companies because it was that much faster, that much more powerful. In his argument, he supposes a made-up, very average programming language called Blub. Blub programmers look down upon programming languages that are supposedly less powerful than Blub, thinking to themselves how silly those poor programmers are, how could they ever get by using such a weak language. It doesn't even have feature x!. Programmers in more powerful languages than Blub, such as Lisps, look down upon Blub programmers the same way. However, Blub programmers look up at more powerful languages like Lisp and don't see what all the fuss is about. They see a language of equal power to Blub but with some extra features they don't understand, and if they don't understand them, how useful could they be! They get along just fine with Blub, are able to solve all the problems they have as efficiently as they need. Graham goes on to evoke specific examples from his experiences:
 
 >”I look at [Python, Java, C, and Perl]. How can you get anything done in them, I think, without macros?"
 
@@ -21,7 +21,7 @@ Furthermore, Paul Graham's 2001 talk turned 2003 article entitled [“Beating th
 
 Graham continues:
 
->“[T]hey're satisﬁed with whatever language they happen to use, because it dictates the way they think about programs. I know this from my own experience, as a high school kid writing programs in Basic. That language didn't even support recursion. It's hard to imagine writing programs without using recursion, but I didn't miss it at the time. I thought in Basic.”
+>“[T]hey're satisfied with whatever language they happen to use, because it dictates the way they think about programs. I know this from my own experience, as a high school kid writing programs in Basic. That language didn't even support recursion. It's hard to imagine writing programs without using recursion, but I didn't miss it at the time. I thought in Basic.”
 
 Dijkstra had rather stronger things to say on the matter in his 1975 writing [“How do we tell truths that might hurt”](http://bit.ly/dijkstra-truths):
 
