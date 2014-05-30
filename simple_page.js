@@ -18,13 +18,12 @@
       var $sel = $('.selected');
       if ($sel[0]) {
         var sel_name  = $('.selected').attr('id');
-        $('#triangle').addClass('at-' + sel_name).show();
+        $('#triangle').addClass('at-' + sel_name);
       }
       $('#intro').addClass('at-top');
       self.setupHovers();
     } else {
       this.skinny = true;
-      $('#triangle').addClass('hidden');
       self.unsetupHovers();
     }
   }

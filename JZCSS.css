@@ -139,11 +139,16 @@ img {
 }
 
 #triangle {
+	display: block;
 	background: url('triangle.png');
 	width: 45px;
 	height: 68px;
 	-webkit-transition: margin-top 500ms;
   transition: margin-top 500ms;
+}
+
+#triangle.hidden {
+	display: none;
 }
 
 /* #triangle placements */
@@ -396,6 +401,10 @@ blockquote {
 		min-width: 300px;
 	}
 
+	#triangle {
+		display: none;
+	}
+
 	.content-box {
 		width: auto;
 		margin: 25px;
@@ -457,5 +466,17 @@ blockquote {
 	.right {
 		float: none;
 		display: block;
+	}
+
+	.blog-index {
+		display: none;
+	}
+
+	.content-box.article-box {
+		width: auto;
+	}
+
+	.content-box.article-box.subsequent {
+		margin-left: 25px;
 	}
 }

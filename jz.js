@@ -21,6 +21,7 @@ _gaq.push(['_trackPageview']);
     this.setupTabs();
 
     if (location.hash.length) {
+      $('#triangle').removeClass('hidden');
       this.goToSection(location.hash.split('#')[1])
       window.scrollTo(0, 0);
     }
@@ -49,13 +50,12 @@ _gaq.push(['_trackPageview']);
       var $sel = $('.selected');
       if ($sel[0]) {
         var sel_name  = $('.selected').attr('id');
-        $('#triangle').addClass('at-' + sel_name).show();
+        $('#triangle').addClass('at-' + sel_name);
       }
       $('#intro').addClass('at-top');
       self.setupHovers();
     } else {
       this.skinny = true;
-      $('#triangle').addClass('hidden');
       self.unsetupHovers();
     }
   }
