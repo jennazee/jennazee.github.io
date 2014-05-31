@@ -126,7 +126,6 @@ h1 {
 img {
 	clear: both;
 	margin: 10px 15px 10px 0px;
-	float:left;
 }
 
 #me-pic{
@@ -275,6 +274,10 @@ li {
 	list-style: none;
 }
 
+#resume-box li {
+	list-style: inherit;
+}
+
 #links li {
 	display: inline;
 }
@@ -396,6 +399,10 @@ blockquote {
 	font-size: 1.2em;
 }
 
+.float-left {
+	float: left;
+}
+
 @media only screen and (max-width: 1140px) {
 	html {
 		min-width: 300px;
@@ -450,9 +457,12 @@ blockquote {
 	}
 
 	img {
-		float: none;
 		display: block;
 		margin: 10px auto;
+	}
+
+	.float-left {
+		float: none;
 	}
 
 	#textbox p, #textbox li {
