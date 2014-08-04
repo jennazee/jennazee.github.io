@@ -1,5 +1,5 @@
-Page = require('./page.js')
-$ = require('jquery')
+Page = require('./page.js');
+$ = require('jquery');
 
 $(document).ready(function() {
   var p = new Page();

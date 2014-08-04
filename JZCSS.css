@@ -23,6 +23,61 @@ header {
 	font-size: 1.2em;
 }
 
+h1 {
+	font-size: 3em;
+	text-align:center;
+	font-weight: 200;
+	padding: 10px 0;
+}
+
+h4 {
+	margin: 5px 0;
+}
+
+img {
+	clear: both;
+	margin: 10px 15px 10px 0px;
+}
+
+a {
+	text-decoration: underline;
+	color: #222;
+}
+
+a:hover {
+	color: rgb(75,75,75);
+}
+
+p {
+	text-align: left;
+	padding: 5px 0;
+}
+
+li {
+	list-style: none;
+}
+
+blockquote {
+	margin: 10px 20px;
+	font-size: 1.2em;
+}
+
+/* utility classes */
+
+.hidden {
+	display: none !important;
+}
+
+.f-left {
+	float: left;
+}
+
+.f-right {
+	float: right;
+}
+
+
+/* page specifics */
 #intro {
 	position: relative;
 	top: 200px;
@@ -32,11 +87,6 @@ header {
 
 #intro.at-top {
 	top: 0px;
-}
-
-
-a:hover {
-	color: rgb(75,75,75);
 }
 
 .content-box {
@@ -59,20 +109,6 @@ a:hover {
 	margin-top: 20px;
 }
 
-h4 {
-	margin: 5px 0;
-}
-
-a {
-	text-decoration: underline;
-	color: #222;
-}
-
-p {
-	text-align:left;
-	padding: 5px 0;
-}
-
 #nav {
 	width: 130px;
 	float:left;
@@ -80,7 +116,7 @@ p {
 }
 
 #nav a:hover {
-	color: white;
+	color: #fff;
 }
 
 .nav-button {
@@ -94,12 +130,12 @@ p {
 	display: inline-block;
 	margin:5px 0;
 	text-decoration: none;
-	color:white;
+	color: #fff;
 }
 
 .nav-button > a {
 	text-decoration: none;
-	color:white;
+	color: #fff;
 }
 
 .nav-button:hover, .nav-buttin > a:hover {
@@ -110,22 +146,6 @@ p {
 
 .nav-button.selected {
 	background: rgb(50,50,50);
-}
-
-.hidden {
-	display: none;
-}
-
-h1 {
-	font-size: 3em;
-	text-align:center;
-	font-weight: 200;
-	padding: 10px 0;
-}
-
-img {
-	clear: both;
-	margin: 10px 15px 10px 0px;
 }
 
 #me-pic{
@@ -144,10 +164,6 @@ img {
 	height: 68px;
 	-webkit-transition: margin-top 500ms;
   transition: margin-top 500ms;
-}
-
-#triangle.hidden {
-	display: none;
 }
 
 /* #triangle placements */
@@ -270,10 +286,6 @@ img {
 	display: inline-block;
 }
 
-li {
-	list-style: none;
-}
-
 #resume-box li {
 	list-style: inherit;
 }
@@ -334,10 +346,6 @@ li {
 	color: white;
 }
 
-blockquote {
-	margin: 10px 0px;
-}
-
 #portlist {
 	margin-left: 0;
 }
@@ -355,10 +363,6 @@ blockquote {
 #resume-box ul {
 	margin-bottom: 10px;
 	margin-left: 35px;
-}
-
-.right {
-	float: right;
 }
 
 /* blog specifix */
@@ -392,15 +396,6 @@ blockquote {
 
 #textbox .blog-index > h3 {
 	margin-top: 0;
-}
-
-blockquote {
-	margin: 10px 20px;
-	font-size: 1.2em;
-}
-
-.float-left {
-	float: left;
 }
 
 @media only screen and (max-width: 1140px) {

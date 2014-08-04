@@ -29,16 +29,23 @@ SimplePage.prototype.onResize = function() {
   }
 }
 
-SimplePage.prototype.setupHovers = function () {
+SimplePage.prototype.setupHovers = function() {
   $nav = $('#nav');
+  $hovers = $('.hover-tip')
   $nav.on('mouseover', 'li', function(e) {
     var name = $(e.target).attr('id');
     $('#' + name + '-hover').removeClass('hidden');
   });
   $nav.on('mouseout', 'li', function(e) {
-    var name = $(e.target).attr('id');
-    $('#' + name + '-hover').addClass('hidden');
-  })
+    // so the hover doesn't flicker when you mouse over it! finally!
+    if (!$(e.relatedTarget).hasClass('hover-tip')) {
+      var name = $(e.target).attr('id');
+      $('#' + name + '-hover').addClass('hidden');
+    }
+  });
+  $hovers.on('mouseout', function(e) {
+    $(e.target).closest('.hover-tip').addClass('hidden');
+  });
 }
 
 SimplePage.prototype.unsetupHovers = function() {
@@ -53,4 +60,4 @@ SimplePage.prototype.setupTabs = function() {
   })
 }
 
-module.exports = SimplePage
+module.exports = SimplePage;
