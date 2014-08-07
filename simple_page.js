@@ -1,4 +1,4 @@
-$ = require('jquery')
+$ = require('jquery');
 
 function SimplePage() {
   this.SKINNY_LIMIT = 1140;
@@ -31,7 +31,7 @@ SimplePage.prototype.onResize = function() {
 
 SimplePage.prototype.setupHovers = function() {
   $nav = $('#nav');
-  $hovers = $('.hover-tip')
+  $hovers = $('.hover-tip');
   $nav.on('mouseover', 'li', function(e) {
     var name = $(e.target).attr('id');
     $('#' + name + '-hover').removeClass('hidden');

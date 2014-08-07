@@ -1,5 +1,5 @@
-$ = require('jquery')
-SimplePage = require('./simple_page.js')
+$ = require('jquery');
+SimplePage = require('./simple_page.js');
 
 function Page() {
   this.SKINNY_LIMIT = 1140;
@@ -15,7 +15,7 @@ Page.prototype.init = function() {
 
   if (location.hash.length) {
     $('#triangle').removeClass('hidden');
-    this.goToSection(location.hash.split('#')[1])
+    this.goToSection(location.hash.split('#')[1]);
     window.scrollTo(0, 0);
   }
 }
@@ -59,7 +59,7 @@ Page.prototype.setupTabs = function() {
     if (hashSplits[1]) {
       self.goToSection(hashSplits[1]);
     } else {
-      self.goToSection('initial')
+      self.goToSection('initial');
     }
   });
 }
@@ -77,11 +77,11 @@ Page.prototype.goToSection = function (section) {
     if (!this.skinny) {
       $intro = $('#intro');
       if (!$intro.hasClass('at-top')) {
-        $intro.addClass('at-top')
+        $intro.addClass('at-top');
       }
       $('#triangle').removeClass('hidden at-about at-work at-contact at-blog at-resume').addClass('at-' + section);
     }
   }
 }
 
-module.exports = Page
+module.exports = Page;
