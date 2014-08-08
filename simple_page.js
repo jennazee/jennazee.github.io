@@ -1,4 +1,4 @@
-$ = require('jquery');
+var $ = require('jquery');
 
 function SimplePage() {
   this.SKINNY_LIMIT = 1140;

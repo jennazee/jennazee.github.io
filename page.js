@@ -1,5 +1,5 @@
-$ = require('jquery');
-SimplePage = require('./simple_page.js');
+var $ = require('jquery');
+var SimplePage = require('./simple_page.js');
 
 function Page() {
   this.SKINNY_LIMIT = 1140;
@@ -18,14 +18,6 @@ Page.prototype.init = function() {
     this.goToSection(location.hash.split('#')[1]);
     window.scrollTo(0, 0);
   }
-}
-
-Page.prototype.setupHovers = function () {
-  SimplePage.prototype.setupHovers.call(this);
-}
-
-Page.prototype.unsetupHovers = function() {
-  SimplePage.prototype.unsetupHovers.call(this);
 }
 
 Page.prototype.onResize = function() {
