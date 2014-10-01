@@ -317,7 +317,7 @@ blockquote {
 	background-size: 63px 63px;
 }
 
-#portlist > li {
+#portlist > li, #talklist > li {
 	list-style-type: none;
 	border-top-color: #bbb;
 	border-top-style: solid;
