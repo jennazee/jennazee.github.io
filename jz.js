@@ -1,7 +1,8 @@
-Page = require('./page.js');
-$ = require('jquery');
+'use strict';
 
-$(document).ready(function() {
-  var p = new Page();
-  p.init();
-})
+let Triangler = require('./triangler.js');
+
+let triangler = new Triangler;
+
+console.log(triangler)
+triangler.makeTopSvg();

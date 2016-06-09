@@ -4,182 +4,184 @@
 
 <head>
   <title>Jenna Zeigen</title>
-  <link rel="stylesheet" type="text/css" href="JZCSS.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-<header>
-  <h1>Jenna Zeigen </h1>
-  <p id="intro">My name is Jenna. I like words, making pretty things out of code, and showing people things they wouldn't have seen before. I want to make people happy.</p>
-</header>
+  <header>
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" id="TopSvg">
+    <h1 class="Title centered">Hi, I'm Jenna.</h1>
+    <p class="centered">I like words, brains, and making pretty things out of code.</p>
+  </header>
 
-<div id="nav">
-  <ul>
-    <li class="nav-button" id="about">About</li>
-    <li class="nav-button" id="work">Work</li>
-    <li class="nav-button" id="resume">Résumé</li>
-    <li class="nav-button" id="blog">Blogs</li>
-    <li class="nav-button" id="contact">Contact</li>
-  </ul>
-</div>
-
-
-<div id="textbox">
-  <div id="triangle" class="hidden"></div>
-
-  <div id="about-box" class="content-box hidden">
-    <img class="f-left" id="me-pic" src="coldsmall.jpg" alt="A Picture of Me!"/>
-    <p>Hey! I'm currently the manager of the Community and Creative Engineering team at <a href="http://digitalocean.com">DigitalOcean.</a> I get to help people be the best programmers they can be all day and sometimes play with JavaScript, so that's pretty great.</p>
-
-    <p>I also spent an awesome three months writing code as part of the fall 2012 batch of <a href="http://www.recurse.com">The Recurse Center</a> (then known as Hacker School). It was amazing. I love how code is, for me, the perfect combination of logic and creativity.</p>
-
-    <p>In May 2012, I received an Sc.B in Cognitive Science at Brown, during which I completed my <a href="http://jenna.is/ThePunnestThesis.pdf">honors thesis</a> in Professor Laura Kertz's <a href="http://research.clps.brown.edu/kertz/lab.html"> Sentence and Discourse Processing Lab</a>, investigating the nature of lexical access and lexical ambiguity resolution in dual-context sentences. In other words, I did my thesis on puns.</p>
-
-    <p>I like thinking about the structure of the mental lexicon, the mental dictionary, and I'd like to learn more about distributed processing models of cognition, computational modeling, human computer interaction, user experience and usability, natural language processing, and data visualization. I also enjoy bouldering, <a href="//jennavsmarketshare.wordpress.com">cooking</a>, <a href="http://www.soundcloud.com/jennaz">making mashups</a>, DJing, and drinking coffee.</p>
-
-    <div id="links">
-      <ul>
-        <li><a class="circ" id="github-link" href="http://www.github.com/jennazee">Github</a></li>
-        <li><a class="circ" id="twitter-link" href="http://www.twitter.com/zeigenvector">Twitter</a></li>
-        <li><a class="circ" id="linkedin-link" href="http://bit.ly/jennazeigenlinkedin">Linkedin</a></li>
-      </ul>
-    </div>
+  <div class="Textbox">
+    <h2 class="Heading">I'm an Engineering Manager at DigitalOcean</h2>
+    <p class="Explanation">I manage the Community Engineering and Creative Engineering Teams</p>
   </div>
 
-  <div id="contact-box" class="content-box hidden">
+  <div class="Textbox">
+    <h2 class="Heading">I'm a conference speaker</h2>
+    <p class="Explanation">I love speaking at conferences. It helps me learn new things and meet awesome people!</p>
+    <ul class="Porfolio">
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">The Linguistic Relativity of Programming Languages</h3>
+        <ul>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">Slides</a></li>
+      </li>
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">Server Farm to Table (or, how the Internet Works)</h3>
+        <ul>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">Slides</a></li>
+      </li>
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">What if your brain were ~*literally*~ JavaScript?</h3>
+        <ul>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">Slides</a></li>
+      </li>
+    </ul>
+  </div>
+
+  <div class="Textbox">
+    <h2 class="Heading">I'm a programmer</h2>
+    <p class="Explanation">I like writing JavaScript. Python is cool too.</p>
+    <ul class="Porfolio">
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">Different</h3>
+        <p class="Portfolio__description">Javascript profiler that times and graphs the runtime of an object in real-time</p>
+        <ul>
+          <li><a href="https://www.npmjs.org/package/different">npm</a></li>
+          <li><a href="http://www.github.com/jennazee/Different">Github</a></li>
+      </li>
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">Caffeine</h3>
+        <p class="Portfolio__description">A module for parsing git diffs from a url or file into an array of JavaScript objects each representing changed files.</p>
+        <ul>
+          <li><a href="https://github.com/jennazee/Caffeine">Github</a></li>
+      </li>
+      <li class="Portfolio__entry">
+        <h3 class="Portfolio__title">Synesthesia</h3>
+        <p class="Portfolio__description">Web app that takes an image and returns another image where each color is replaced with words associated with that color</p>
+        <ul>
+          <li><a href="https://github.com/jennazee/Synesthesia">Github</a></li>
+      </li>
+    </ul>
+  </div>
+
+  <div class="Textbox">
+    <h2 class="Heading">I'm a cognitive scientist</h2>
+    <p class="Explanation">I graduated from Brown in 2012 with an Sc.B with honors in cognitive science. My honors thesis was on puns.</p>
+  </div>
+
+  <div class="Textbox">
+    <h2 class="Heading">I'm a writer, on occasion.</h2>
+    <p class="Explanation">I have a <a href='/zeigenspace'>blog</a>, theoretically...</p>
+  </div>
+
+  <!-- <div class="Textbox">
+
+  <div class="Contentbox">
+    <p>Here's what I like to say about myself:</p>
+    <p>One morning, Jenna awoke to find that she had transformed into a programmer. She's been psyched about coding ever since. She's currently swimming with JavaScript at <a href="http://digitalocean.com">DigitalOcean.</a> as the Engineering Manager for the Community Engineering and Creative Engineering teams.When she's not teaching pixels to party or helping keep engineers happy, Jenna enjoys climbing, coffee, and cat gifs. Her best party trick is that she wrote the most serious academic paper of her life— her <a href="http://bit.ly/punthesis">undergraduate honors thesis</a>— on puns.</p>
+
+    <ul>
+      <li><a class="circ" id="github-link" href="http://www.github.com/jennazee">Github</a></li>
+      <li><a class="circ" id="twitter-link" href="http://www.twitter.com/zeigenvector">Twitter</a></li>
+      <li><a class="circ" id="linkedin-link" href="http://bit.ly/jennazeigenlinkedin">Linkedin</a></li>
+    </ul>
+  </div>
+
+  <div class="Contentbox">
+    <p> I have a blog I'm trying to keep up: <a href="/zeigenspace.html">zeigenspace, a blog</a></p>
+  </div>
+
+  <div class="Contentbox">
     <p>Hi there! You can email me at jenna.zeigen [AT] gmail.com.</p>
   </div>
 
-  <div id="blog-box" class="content-box hidden">
-    <p> I have a blog I'm trying to keep up: <a href="/zeigenspace.html">zeigenspace, a blog</a></p>
-    <p> And two older blogs:
-      <ul>
-        <li><a href="//linkguistics.blogspot.com">Linkguistics</a>: Here I explore language, computers, code, minds, brains, and the like</li>
-        <li><a href="//jennavsmarketshare.wordpress.com">Jenna vs. Market Share:</a> This is my summer food blog in which I chronicle my struggle against vegetables</li>
-      </ul>
-    </p>
-  </div>
+  <div class="Contentbox">
+    <h3>Talks</h3>
+    <p>I love giving talks at meetups and conferences. Here are slides and videos, when available</p>
+    <ul class='TalkList'> -->
 
-  <div id="resume-box" class="content-box hidden">
-    <p class="f-right"><a href="Jenna_Zeigen_Resume.pdf" id="dl-res">Download a PDF Version</a></p>
-    <div id="education">
-      <h2 class="res-head">Education</h2>
-      <p><strong>Brown University</strong> - Sc.B. in Cognitive Science, with honors (3.89 GPA) <span class="f-right">Providence, RI • 2008 - 2012</span></p>
-      <ul>
-        <li>Relevant course experience includes Cognition, HCI, and Visual Analysis; Creating Modern Web Applications; Introduction to Probability and Computing; Introduction to Algorithms and Data Structures; and Language Processing</li>
-        <li><a href="http://jenna.is/ThePunnestThesis.pdf">Honors Thesis</a>: “What’s so funny?: Investigating the time-course of lexical access in the processing of puns”</li>
-      </ul>
+      <!-- <li class="Talk"><h4>QueensJS February 2016</h4>
+        <p class="Talk__title">Some Fantastic Front-End Performance Tricks and Why We Do Them</p>
+        <a class="Talk__link" href="http://jenna.is/feperf-queensjs.pdf">Slides</a>
+      </li> -->
 
-      <p><strong>Council Rock High School - South</strong> - Valedictorian (4.0 GPA)<span class="f-right">Holland, PA •  Graduated 2007</span></p>
-    </div>
 
-    <div id="work">
-      <h2 class="res-head">Work and Project Experience</h2>
-      <p><strong><a href="http://digitalocean.com">DigitalOcean</a></strong> - Engineering Manager<span class="f-right">New York, NY • August 2015 - Present</span></p>
-      <ul>
-        <li>Managing and growing teams of engineers across the web stack</li>
-        <li>Continuing initiatives to make our engineering team better, such as a mentorship program and code of conduct</li>
-      </ul>
-
-      <p><strong><a href="http://digitalocean.com">DigitalOcean</a></strong> - User Controls Team Lead<span class="f-right">New York, NY • February 2015 - August 2015</span></p>
-      <ul>
-        <li>Leading the user-facing web team of JavaScript and Ruby Engineers</li>
-        <li>Refreshing DigitalOcean's control panel to use contemporary technologies such as Ember, React, and Webpack</li>
-        <li>Guiding initiatives to make our engineering team better, such as a mentorship program and code of conduct</li>
-      </ul>
-
-      <p><strong><a href="http://bitly.com">Bitly</a></strong> - Software Engineer<span class="f-right">New York, NY • September 2013 - January 2015</span></p>
-      <ul>
-        <li>Contributed to the redesign and unification of Bitly's products</li>
-        <li>Spearheaded project to start using Browserify to leverage npm's dependency management system</li>
-        <li>Introduced front-end performance monitoring and worked to optimize the application based on the collected data</li>
-      </ul>
-
-      <p><strong><a href="http://waywire.com">#waywire</a></strong> - Software Engineer<span class="f-right">New York, NY • February 2013 - August 2013</span></p>
-      <ul>
-        <li>Wrote JavaScript and CoffeeScript to drive the interactivity and functionality of the network</li>
-        <li>Redesigned the system for identifying embedded videos and adding them to users' playlists</li>
-        <li>Enhanced controllers and views within the Ruby on Rails application</li>
-      </ul>
-
-      <p><strong><a href="http://www.hackerschool.com">Hacker School</a></strong> - Participant<span class="f-right">Brooklyn, NY • October 2012 - December 2012</span></p>
+      <!-- <li class="Talk">
+        <h4>Server Farm to Table (or, how the Internet works)</h4>
+        <p>Many of us depend on the internet for both work and play, but it's possible to go about our lives without knowing the steps it takes to get those pixels to show up and delight us and our users. However, a sense of the process of what's going on to serve web apps can help us as developers make better software as well as understand the motivation behind many of the optimizations that we've been taught. This talk will cover the life of a web request in a browser, from entering the URL to the processing the HTML, covering DNS, TLS, TCP, HTTP, and HTML parsing and rendering, explaining how each step in the process affects the performance of web apps.</p>
         <ul>
-        <li>Programmed novel, in-depth projects exploring various programming languages, technologies, and techniques</li>
-        <li>Created full-stack web applications, and NLP, image processing, and web scraping scripts in JavaScript and Python</li>
-        <li>Discussed and reviewed projects with and providing feedback to other participants and facilitators</li>
+          <li class="Talk__rendition">
+            <h5>Thunderplains 2015</h5>
+            <a class="Talk__link" href="http://bit.ly/jz-thunderplains">Video</a>
+            <a class="Talk__link" href="http://jenna.is/thunderplains.pdf">Slides</a>
+          </li>
+          <li class="Talk__rendition">
+            <h5>ManhattanJS January 2016</h5>
+            <a class="Talk__link" href="http://jenna.is/manhattanjs-jan16.pdf">Slides</a>
+          </li>
         </ul>
+      </li>
 
-      <p><strong><a href="http://research.clps.brown.edu/kertz/lab.html">Sentence and Discourse Processing Lab</a></strong> - Research Assistant<span class="f-right">Providence, RI • June 2011 - August 2012</span></p>
+      <li class="Talk">
+        <h4>What if your brain were ~*literally*~ JavaScript?</h4>
+        <p>How does the human mind compare to JavaScript? In this talk, we'll explore three key components of cognitive science— language, knowledge representation, and attention— and compare them with concepts in JavaScript— JavaScript as a language, its object and prototype system, and its event loop.</p>
         <ul>
-        <li>Worked with <a href="http://research.clps.brown.edu/kertz/index.html">Professor Laura Kertz</a> in <a href="http://clps.brown.edu">Brown University’s Department of Cognitive, Linguistic, and Psychological Sciences</a></li>
-        <li>Performed independent human subjects research towards an <a href="http://jenna.is/ThePunnestThesis.pdf">honors thesis</a> on lexical access and lexical ambiguity</li>
-        <li>Conceptualized, designed and executed novel experiments about simultaneous activation of homograph meanings</li>
-        <li>Collaborated with Professor Kertz in developing experiments investigating language processing and information structure</li>
-        <li>Analyzed and formatted large data sets using MATLAB and Python scripts</li>
+          <li class="Talk__rendition">
+            <h5>RejectJS 2015</h5>
+            <a class="Talk__link" href="https://www.youtube.com/watch?v=Lv29oYa7ENg">Video</a>
+            <a class="Talk__link" href="http://jenna.is/rejectjs.pdf">Slides</a>
+          </li>
+          <li class="Talk__rendition">
+            <h5>Texas JavaScript (txjs)</h5>
+            <a class="Talk__link" href="https://www.youtube.com/watch?v=-K0uKFE-AL4">Video</a>
+            <a class="Talk__link" href="http://jenna.is/txjs.pdf">Slides</a>
+          </li>
         </ul>
-    </div>
-
-    <div id="leadership">
-      <h2 class="res-head">Instructional and Leadership Experience</h2>
-      <p><strong><a href="http://clps.brown.edu">Dept. of Cognitive, Linguistic, and Psychological Sciences</a></strong> - Course Developer and TA<span class="f-right">Providence, RI • June 2011 - May 2012</span></p>
-      <ul>
-        <li>Designed a curriculum of tutorials to teach programming skills in MATLAB</li>
-        <li>Served as TA for Prof. Thomas Serre’s <a href="https://sites.google.com/a/brown.edu/computational-vision-fall-2011/0-matlab-tutorials">Computational Vision</a> (Fall) and <a href="https://sites.google.com/a/brown.edu/clps-1291-spring-2012/0-matlab-tutorials">Computational Cognitive Science</a> (Spring) courses</li>
-        <li>Wrote and conducted lectures and labs and developed demos, sample code, and documentation</li>
-        <li>Conducted bi-weekly office hours to guide students individually through code implementation and program design</li>
-      </ul>
-
-      <p><strong><a href="https://www.habonimdror.org/">Habonim Dror North America</a></strong> - Regional Chapter Founder, Coordinator<span class="f-right">Boston, MA • June 2007 - May 2012</span></p>
-      <ul>
-        <li>Established and coordinated regional informal education program for ages 8-16 (February 2009 - Dec. 2011)</li>
-        <li>Planned activities educating about social justice and actualization (February 2009 - May 2012)</li>
-        <li>Volunteered teaching English in Israel during gap year program (January - May 2008)</li>
-      </ul>
-
-      <p><strong>Brown/RISD Hillel Foundation</strong> - Various Board Positions<span class="f-right">Providence, RI • Nov. 2008 - May 2012</span></p>
-      <ul>
-        <li>Co-founded and served on executive board of campus Pro-Israel, Pro-Palestine, Pro-Peace org. (Nov. 2008 - May 2012)</li>
-        <li>Chaired Israel Committee of the Programming Board (September 2009 - May 2010)</li>
-        <li>Directed the 2010 Israeli Film Festival on College Hill (September 2009 - February 2010)</li>
-      </ul>
-    </div>
-
-    <div id="awards">
-      <h2 class="res-head">Honors and Speaking Engagements</h2>
-      <p><strong>Thunderplains 2015: </strong><a href="http://bit.ly/jz-thunderplains">"Server Farm to Table (or, how the Internet works)"</a><span class="f-right">Oklahoma City, Oklahoma • November 3, 2015</span></p>
-
-      <p><strong>RejectJS 2015: </strong><a href="https://www.youtube.com/watch?v=Lv29oYa7ENg">"What if your brain were ~*literally*~ JavaScript?"</a><span class="f-right">Berlin, Germany • September 24, 2015</span></p>
-
-      <p><strong>Texas JavaScript 2015: </strong><a href="https://www.youtube.com/watch?v=-K0uKFE-AL4">"What if your brain were ~*literally*~ JavaScript?"</a><span class="f-right">Austin, TX • July 24, 2015</span></p>
-
-      <p><strong>EmpireJS 2015: </strong><a href="http://bit.ly/jz-empirejs-2015">"The Linguistic Relativity of Programming Languages"</a><span class="f-right">New York, NY • April 26-27, 2015</span></p>
-
-      <p><strong>JSConfEU 2014: </strong><a href="http://bit.ly/jz-jsconfeu-2014">"The Linguistic Relativity of Programming Languages"</a><span class="f-right">Berlin, Germany • Sept 13-14, 2014</span></p>
-
-      <p><strong>New Frontiers Undergraduate Teaching and Research Award</strong><span class="f-right">Providence, RI • June - August 2011</span></p>
-      <ul>
-        <li>Worked closely with Professor Laura Kertz on independent research leading to honors thesis</li>
-      </ul>
-
-      <p><strong>Astounding New Initiatives Award from Brown/RISD Hillel Foundation</strong><span class="f-right">Providence, RI • April 2009</span></p>
-      <ul>
-        <li>Received for 2008-2009 school year for founding Pro-Israel, Pro-Palestine, Pro-Peace organization</li>
-      </ul>
-    </div>
-
-    <div id="skills">
-      <h2 class="res-head">Skills and Interests</h2>
-      <p><strong>Preferred Programming Languages:</strong> JavaScript (with and without jQuery), CoffeeScript, Python</p>
-      <p><strong>Interests:</strong> Playing guitar, <a href="//jennavsmarketshare.wordpress.com">cooking</a>, <a href="http://www.soundcloud.com/jennazee">making mashups</a>, bouldering, coffee, puns, networks, patterns, words</p>
-    </div>
-  </div>
+      </li>
+    </ul>
 
 
-  <div id="work-box" class="content-box hidden">
-    <div id="code">
+        <li><h4>NYC Camp's Frontend Camp</h4>
+          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
+          <p>The hypothesis of linguistic relativity, also known as the Sapir-Whorf Hypothesis, says that the languages we speak influence the way we think. I argue that this applies to programming languages as well. However, key differences between spoken languages and programming languages enable us to adapt and shift our ways of thinking more fluidly as we learn new programming languages than as we learn new spoken languages. It is these same differences that we can and should leverage to both grow individually as programmers and further advance our favorite programming languages. JavaScript is in a particularly ripe place to take advantage of these differences, as it is such a popular and dynamic (literally) language with a strong culture of libraries, evolution, ease of learning, and community.</p>
+          <a class="port" href="http://jenna.is/fecamp15.pdf">Slides</a>
+        </li>
+
+        <li><h4>ManhattanJS June 2015</h4>
+          <p><strong>How We Process Puns!</strong></p>
+          <p>ManhattanJS has a passion talk every month and I talked about my beloved academic pursuit: the cognitive science of puns</p>
+          <a class="port" href="http://jenna.is/manhattanjs-puns.pdf">Slides</a>
+        </li>
+
+        <li><h4>EmpireJS 2015</h4>
+          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
+          <p>See above!</p>
+          <a class="port" href="http://bit.ly/jz-empirejs-2015">Video</a>
+          <a class="port" href="http://jenna.is/empirejs15.pdf">Slides</a>
+        </li>
+
+        <li><h4>JSConf.EU 2014</h4>
+          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
+          <p>See above!</p>
+          <a class="port" href="http://bit.ly/jz-jsconfeu-2014">Video</a>
+          <a class="port" href="http://bit.ly/jz-jsconfeu">Slides</a>
+        </li>
+
+        <li><h4>BrooklynJS May 2014</h4>
+          <p><strong>It's all position: relative - Linguistic Relativity and Programming Languages</strong></p>
+          <a class="port" href="http://bit.ly/bk-js">Slides</a>
+        </li>
+      </ul> -->
+
+      <!-- <div id="code">
       <h3>Code Portfolio</h3>
       <p>All of my code can be found on my <a href="http://www.github.com/jennazee">Github</a>. Here are some highlights.</p>
       <ul id='portlist'>
@@ -233,72 +235,6 @@
       </ul>
     </div>
 
-    <div id="talks">
-      <h3>Talks</h3>
-      <p>I've been getting into giving talks at meetups and conferences. Here are slides and videos, when available</p>
-      <ul id='talklist'>
-        <li><h4>QueensJS February 2016</h4>
-          <p><strong>Some Fantastic Front-End Performance Tricks and Why We Do Them</strong></p>
-          <a class="port" href="http://jenna.is/feperf-queensjs.pdf">Slides</a>
-        </li>
-
-        <li><h4>ManhattanJS January 2016</h4>
-          <p><strong>Server Farm to Table (or, how the Internet works)</strong></p>
-          <a class="port" href="http://jenna.is/manhattanjs-jan16.pdf">Slides</a>
-        </li>
-
-        <li><h4>Thunderplains 2015</h4>
-          <p><strong>Server Farm to Table (or, how the Internet works)</strong></p>
-          <p>Many of us depend on the internet for both work and play, but it's possible to go about our lives without knowing the steps it takes to get those pixels to show up and delight us and our users. However, a sense of the process of what's going on to serve web apps can help us as developers make better software as well as understand the motivation behind many of the optimizations that we've been taught. This talk will cover the life of a web request in a browser, from entering the URL to the processing the HTML, covering DNS, TLS, TCP, HTTP, and HTML parsing and rendering, explaining how each step in the process affects the performance of web apps.</p>
-          <a class="port" href="http://bit.ly/jz-thunderplains">Video</a>
-          <a class="port" href="http://jenna.is/thunderplains.pdf">Slides</a>
-        </li>
-
-        <li><h4>RejectJS 2015</h4>
-          <p><strong>What if your brain were ~*literally*~ JavaScript?</strong></p>
-          <p>How does the human mind compare to JavaScript? In this talk, we'll explore three key components of cognitive science— language, knowledge representation, and attention— and compare them with concepts in JavaScript— JavaScript as a language, its object and prototype system, and its event loop.</p>
-          <a class="port" href="https://www.youtube.com/watch?v=Lv29oYa7ENg">Video</a>
-          <a class="port" href="http://jenna.is/rejectjs.pdf">Slides</a>
-        </li>
-
-        <li><h4>Texas JavaScript (txjs)</h4>
-          <p><strong>What if your brain were ~*literally*~ JavaScript?</strong></p>
-          <p>See above!</p>
-          <a class="port" href="https://www.youtube.com/watch?v=-K0uKFE-AL4">Video</a>
-          <a class="port" href="http://jenna.is/txjs.pdf">Slides</a>
-        </li>
-
-        <li><h4>NYC Camp's Frontend Camp</h4>
-          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
-          <p>The hypothesis of linguistic relativity, also known as the Sapir-Whorf Hypothesis, says that the languages we speak influence the way we think. I argue that this applies to programming languages as well. However, key differences between spoken languages and programming languages enable us to adapt and shift our ways of thinking more fluidly as we learn new programming languages than as we learn new spoken languages. It is these same differences that we can and should leverage to both grow individually as programmers and further advance our favorite programming languages. JavaScript is in a particularly ripe place to take advantage of these differences, as it is such a popular and dynamic (literally) language with a strong culture of libraries, evolution, ease of learning, and community.</p>
-          <a class="port" href="http://jenna.is/fecamp15.pdf">Slides</a>
-        </li>
-
-        <li><h4>ManhattanJS June 2015</h4>
-          <p><strong>How We Process Puns!</strong></p>
-          <p>ManhattanJS has a passion talk every month and I talked about my beloved academic pursuit: the cognitive science of puns</p>
-          <a class="port" href="http://jenna.is/manhattanjs-puns.pdf">Slides</a>
-        </li>
-
-        <li><h4>EmpireJS 2015</h4>
-          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
-          <p>See above!</p>
-          <a class="port" href="http://bit.ly/jz-empirejs-2015">Video</a>
-          <a class="port" href="http://jenna.is/empirejs15.pdf">Slides</a>
-        </li>
-
-        <li><h4>JSConf.EU 2014</h4>
-          <p><strong>The Linguistic Relativity of Programming Languages</strong></p>
-          <p>See above!</p>
-          <a class="port" href="http://bit.ly/jz-jsconfeu-2014">Video</a>
-          <a class="port" href="http://jenna.is/jsconfeu-2014.pdf">Slides</a>
-        </li>
-
-        <li><h4>BrooklynJS May 2014</h4>
-          <p><strong>It's all position: relative - Linguistic Relativity and Programming Languages</strong></p>
-          <a class="port" href="http://jenna.is/bkjsmay2014.pdf">Slides</a>
-        </li>
-      </ul>
       <h3>"Publications"</h3>
       <ul id='bloglist'>
         <li><h4>Frontend Dependency Management with Browserify</h4>
@@ -306,47 +242,10 @@
           <a class="port" href="http://bit.ly/uses-browserify">Post</a>
         </li>
       </ul>
-    </div>
-
-    <div id="langproc">
-      <h3>Language Processing Research </h3>
-      <p> In April 2012, I completed my <a href="http://jenna.is/ThePunnestThesis.pdf">honors thesis</a> on how we process puns in Laura Kertz's <a href="http://research.clps.brown.edu/kertz/lab.html">Sentence and Discourse Processing Lab</a> in Brown's <a href="http://www.brown.edu/Departments/CLPS/">Department of Cognitive, Linguistic, and Psychological Sciences</a>. I have also done work investigating what motivates the existence of a linguistic phenomenon called <a href="http://en.wikipedia.org/wiki/Wh-movement#Extraction_islands">"extraction islands."</a></p>
-      <p> In Summer 2011, I was honored to present at Brown's Summer Research Symposium, at which I presented <a href="UTRAPosterForWeb.pdf"> this poster</a>.</p>
-      <p> While you're here, <a href="lexical.jpg"> take a look</a> at what I drew Hacker School to answer a question on their application that was something like "Explain something you know well as deeply as you can." I wrote about how we understand the intended meaning(s) of words with multiple meanings, a key thing in understanding puns</p>
-    </div>
-
-    <div id="music">
-      <h3> Music </h3>
-      <p> I make mashups. Here's my latest one: "Eternal Bromance"
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F54785821&amp;auto_play=false&amp;show_artwork=true&amp;color=2beee5"></iframe></p>
-      <p>Listen to more of my music on <a href="http://soundcloud.com/jennaz/"> SoundCloud</a>.</p>
-    </div>
+    </div> -->
   </div>
 </div>
 
-<div id="about-hover" class="hover-tip hidden">
-  <p>Find out what makes me me!</p>
-</div>
-
-<div id="blog-hover" class="hover-tip hidden">
-  <p>I sometimes write about interesting things!</p>
-</div>
-
-<div id="work-hover" class="hover-tip hidden">
-  <p>I make cool things!</p>
-</div>
-
-<div id="resume-hover" class="hover-tip hidden">
-  <p>Jenna fact sheet!</p>
-</div>
-
-<div id="contact-hover" class="hover-tip hidden">
-  <p>Send me email!</p>
-</div>
-
-<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="jz-bundle.js" type="text/javascript"></script>
 <script>console.log("Oh hai there! Nice to see you checkin' me out!");</script>
-
 </body>
 </html>

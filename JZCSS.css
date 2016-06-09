@@ -10,25 +10,20 @@ html {
 }
 
 body {
-	color: white;
 	font-family: 'Source Sans Pro', Helvetica, sans-serif;
 	font-weight: 200;
-	background: url('lights1.jpg') black no-repeat 0 300px;
 	line-height: 1.4;
 	box-sizing: border-box;
 }
 
-header {
-	width: 38em;
-	margin: 0 auto;
-	font-size: 1.2em;
+.centered {
+	text-align: center;
 }
 
-h1 {
+.Title {
 	font-size: 3em;
-	text-align:center;
 	font-weight: 200;
-	padding: 10px 0;
+	padding: 10px 0 0;
 }
 
 h4 {
