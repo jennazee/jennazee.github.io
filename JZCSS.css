@@ -3,6 +3,7 @@
 * {
 	padding: 0;
 	margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -32,15 +33,50 @@ body {
 	padding: 15px 0;
 }
 
+.Textbox:before {
+  content: '♥︎♥︎♥︎';
+  padding-bottom: 40px;
+  display: block;
+  font-size: 40px;
+  color: #0ee8e8;
+}
+
 .Portfolio {
 	padding: 10px 0;
+  display: flex;
 }
 
 .Portfolio__title {
 	font-weight: 200;
 }
 
+.Portfolio__entry {
+  list-style: none;
+}
+
+.Portfolio__links {
+  list-style: none;
+}
+
+.Portfolio__links li {
+  display: inline-block;
+}
+
+.Portfolio__links li:after {
+  content: '|';
+  padding: 10px;
+}
+
+.Portfolio__links a {
+  color: black;
+  text-decoration: none;
+}
+
 .Internet {
+  display: inline-block;
+}
+
+.Internet__link {
   background-repeat: no-repeat;
   background-size: 60px;
   height: 60px;
