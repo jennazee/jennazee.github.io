@@ -40,7 +40,10 @@ class Triangler {
   }
 
   makeTriangle(color, index) {
+    const svgns = "http://www.w3.org/2000/svg";
     let shape = document.createElementNS(svgns, "polygon");
+
+    console.log(this)
 
     let width = this.getRandomFromInterval(this.TRIANGLE_INTERVAL, this.TRIANGLE_MAX_WIDTH);
     let height = this.getRandomFromInterval(this.TRIANGLE_MIN_HEIGHT, this.TRIANGLE_MAX_HEIGHT);

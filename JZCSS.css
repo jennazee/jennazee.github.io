@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+*/
 
 * {
 	padding: 0;
@@ -7,7 +8,7 @@
 }
 
 body {
-	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-family: 'Sailec', Helvetica, sans-serif;
 	font-weight: 200;
 }
 
