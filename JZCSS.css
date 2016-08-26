@@ -1,5 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
-*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
 
 * {
 	padding: 0;
@@ -7,15 +6,19 @@
   box-sizing: border-box;
 }
 
+header {
+  padding-bottom: 15px;
+}
+
 body {
-	font-family: 'Sailec', Helvetica, sans-serif;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
 	font-weight: 200;
 }
 
 .Title {
 	font-size: 3em;
 	font-weight: 200;
-	padding: 10px 0 0;
+	padding-top: 10px;
 	text-align: center;
 }
 
@@ -28,22 +31,31 @@ body {
 	padding-bottom: 10px;
 }
 
+.Contentbox {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 .Textbox {
 	text-align: center;
 	font-weight: 200;
-	padding: 15px 0;
+	padding-bottom: 15px;
 }
 
-.Textbox:before {
-  content: '♥︎♥︎♥︎';
-  padding-bottom: 40px;
-  display: block;
-  font-size: 40px;
-  color: #0ee8e8;
+.Textbox:before, footer:before {
+  content: '';
+  background-image: url(teal-heart.svg), url(teal-heart.svg), url(teal-heart.svg);
+  background-repeat: no-repeat;
+  background-position: left, right, center;
+  background-size: 20px;
+  height: 20px;
+  display: inline-block;
+  width: 74px;
+  margin-bottom: 40px;
 }
 
 .Portfolio {
-	padding: 10px 0;
+	padding-top: 10px;
   display: flex;
 }
 
@@ -53,6 +65,7 @@ body {
 
 .Portfolio__entry {
   list-style: none;
+  flex: 1;
 }
 
 .Portfolio__links {
@@ -63,7 +76,7 @@ body {
   display: inline-block;
 }
 
-.Portfolio__links li:after {
+.Portfolio__links li+li:before {
   content: '|';
   padding: 10px;
 }
@@ -96,4 +109,9 @@ body {
 
 .Internet--linkedin {
 	background-image: url(linkedin.png);
+}
+
+footer {
+  text-align: right;
+  margin-right: 30px;
 }
