@@ -415,6 +415,7 @@ blockquote {
 	#intro {
 		position: static;
 		margin: 15px;
+		text-align: center;
 	}
 
 	header {
@@ -453,7 +454,11 @@ blockquote {
 
 	img {
 		display: block;
-		margin: 10px auto;
+	}
+
+	#me-pic {
+		float: none;
+		margin: 0 auto;
 	}
 
 	.float-left {
