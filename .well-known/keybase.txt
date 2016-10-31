@@ -4,7 +4,7 @@ https://keybase.io/jenna
 
 I hereby claim:
 
-  * I am an admin of http://jennazeigen.com
+  * I am an admin of http://jenna.is
   * I am jenna (https://keybase.io/jenna) on keybase.
   * I have a public key with fingerprint F6EF 4A1B 2567 965A 383C  D30F 2EFC 3270 C625 EFD8
 
@@ -20,7 +20,7 @@ To claim this, I am signing this object:
             "username": "jenna"
         },
         "service": {
-            "hostname": "jennazeigen.com",
+            "hostname": "jenna.is",
             "protocol": "http:"
         },
         "type": "web_service_binding",
