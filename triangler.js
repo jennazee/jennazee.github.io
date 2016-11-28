@@ -10,6 +10,7 @@ class Triangler {
     this.RED = 'rgb(212, 29, 0)';
     this.ORANGE = 'rgb(255, 147, 0)';
     this.YELLOW = 'rgb(255, 255, 0)';
+    this.colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
     this.TRIANGLE_INTERVAL = 100;
     this.TRIANGLE_MAX_WIDTH = 300;
     this.TRIANGLE_MIN_HEIGHT = 50;
@@ -28,9 +29,8 @@ class Triangler {
 
   makeTopSvg() {
     const svgns = "http://www.w3.org/2000/svg";
-    const colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
 
-    colors.map((color, index) => {
+    this.colors.map((color, index) => {
       let shape = document.createElementNS(svgns, "polygon");
 
       let width = this.getRandomFromInterval(this.TRIANGLE_INTERVAL, this.TRIANGLE_MAX_WIDTH);
@@ -49,7 +49,7 @@ class Triangler {
     })
   }
 
-  drawTrianglesFromIndex(svg, colors) {
+  drawTrianglesFromIndex(svg) {
     while (this.bottomTriangleIndex * this.TRIANGLE_INTERVAL < this.bottomTriangleSpan) {
       let shape = document.createElementNS(svg, "polygon");
 
@@ -63,7 +63,7 @@ class Triangler {
       let opacity = this.getRandomOpacityFromInterval(0.5, 0.9)
 
       shape.setAttributeNS(null, "points", points);
-      shape.setAttributeNS(null, "fill", colors[this.bottomTriangleIndex % 4]);
+      shape.setAttributeNS(null, "fill", this.colors[this.bottomTriangleIndex % 4]);
       shape.setAttributeNS(null, "fill-opacity", opacity);
       document.getElementById('BottomSvg').appendChild(shape);
       this.bottomTriangleIndex++;
@@ -72,14 +72,13 @@ class Triangler {
 
   makeBottomSvg() {
     const svgns = "http://www.w3.org/2000/svg";
-    const colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
 
-    this.drawTrianglesFromIndex(svgns, colors);
+    this.drawTrianglesFromIndex(svgns);
 
     var self = this;
     window.addEventListener('resize', function(e) {
       if (self.bottomTriangleSpan < window.innerWidth) {
-        self.drawTrianglesFromIndex(svgns, colors);
+        self.drawTrianglesFromIndex(svgns);
         self.bottomTriangleSpan = window.innerWidth;
       }
     })
