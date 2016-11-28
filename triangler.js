@@ -1,11 +1,13 @@
 'use strict';
 
+const svgns = "http://www.w3.org/2000/svg";
+
 class Triangler {
   constructor() {
-    this.FUSCHIA = '#bd10e0';
-    this.AQUA = '#50e3c2';
-    this.PURPLE = '#9013fe';
-    this.GREEN = '#b8e986';
+    // this.FUSCHIA = '#bd10e0';
+    // this.AQUA = '#50e3c2';
+    // this.PURPLE = '#9013fe';
+    // this.GREEN = '#b8e986';
     this.VIOLET = 'rgb(148, 33, 148)';
     this.RED = 'rgb(212, 29, 0)';
     this.ORANGE = 'rgb(255, 147, 0)';
@@ -28,8 +30,6 @@ class Triangler {
   }
 
   makeTopSvg() {
-    const svgns = "http://www.w3.org/2000/svg";
-
     this.colors.map((color, index) => {
       let shape = document.createElementNS(svgns, "polygon");
 
@@ -71,8 +71,6 @@ class Triangler {
   }
 
   makeBottomSvg() {
-    const svgns = "http://www.w3.org/2000/svg";
-
     this.drawTrianglesFromIndex(svgns);
 
     var self = this;

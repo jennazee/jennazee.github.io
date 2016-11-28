@@ -168,6 +168,7 @@ footer {
 
 footer svg {
   transform: rotateX(180deg);
+  margin-top: 10px;
 }
 
 @media (max-width: 640px) {
