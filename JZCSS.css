@@ -68,7 +68,6 @@ footer:before {
 .Portfolio {
   margin-left: 50px;
   display: flex;
-  max-width: 1024px;
   position: relative;
   top: -25px;
 }
@@ -111,7 +110,7 @@ footer:before {
   padding: 10px;
 }
 
-.Portfolio__links a {
+a {
   color: black;
   text-decoration: none;
 }
