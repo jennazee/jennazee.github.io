@@ -1,3 +1,11 @@
+/*
+$purple: rgb(148, 33, 148);
+$red: rgb(212, 29, 0);
+$orange: rgb(255, 147, 0);
+$yellow: rgba(255, 255, 0);
+*/
+
+
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
 
 * {
@@ -16,14 +24,16 @@ body {
 }
 
 .Title {
-	font-size: 6em;
+	font-size: 96px;
 	padding-top: 10px;
 	text-align: center;
+  margin: 0 20px;
 }
 
 .Subtitle {
 	text-align: center;
-  font-size: 1.25em;
+  font-size: 24px;
+  margin: 0 10px;
 }
 
 .Heading {
@@ -32,6 +42,7 @@ body {
   width: 70%;
   text-align: right;
   font-size: 2em;
+  margin-top: 40px;
 }
 
 .Explanation {
@@ -42,6 +53,7 @@ body {
   top: -15px;
   text-align: left;
   max-width: 1024px;
+  font-size: 18px;
 }
 
 .Textbox {
@@ -58,7 +70,7 @@ body {
   height: 20px;
   display: inline-block;
   width: 74px;
-  margin: 40px 0;
+  margin-top: 40px;
 }
 
 footer:before {
@@ -68,6 +80,7 @@ footer:before {
 .Portfolio {
   margin-left: 50px;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   top: -25px;
 }
@@ -78,6 +91,7 @@ footer:before {
   padding: 20px;
   position: relative;
   min-width: 150px;
+  max-width: 300px;
 }
 
 .Portfolio__entry:nth-child(3n + 1) {
@@ -152,7 +166,19 @@ footer {
   text-align: right;
 }
 
+footer svg {
+  transform: rotateX(180deg);
+}
+
 @media (max-width: 640px) {
+  .Title {
+    font-size: 72px;
+  }
+
+  .Subtitle {
+    font-size: 18px;
+  }
+
   .Portfolio {
     display: block;
     text-align: right

@@ -5,9 +5,8 @@ let Triangler = require('./triangler.js');
 
 let triangler = new Triangler;
 
-console.log(triangler)
 triangler.makeTopSvg();
-
+triangler.makeBottomSvg();
 },{"./triangler.js":2}],2:[function(require,module,exports){
 'use strict';
 
@@ -17,10 +16,16 @@ class Triangler {
     this.AQUA = '#50e3c2';
     this.PURPLE = '#9013fe';
     this.GREEN = '#b8e986';
+    this.VIOLET = 'rgb(148, 33, 148)';
+    this.RED = 'rgb(212, 29, 0)';
+    this.ORANGE = 'rgb(255, 147, 0)';
+    this.YELLOW = 'rgb(255, 255, 0)';
     this.TRIANGLE_INTERVAL = 100;
     this.TRIANGLE_MAX_WIDTH = 300;
     this.TRIANGLE_MIN_HEIGHT = 50;
     this.TRIANGLE_MAX_HEIGHT = 150;
+    this.bottomTriangleSpan = window.innerWidth;
+    this.bottomTriangleIndex = 0;
   }
 
   getRandomFromInterval(min, max) {
@@ -33,7 +38,7 @@ class Triangler {
 
   makeTopSvg() {
     const svgns = "http://www.w3.org/2000/svg";
-    const colors = [this.FUSCHIA, this.AQUA, this.PURPLE, this.GREEN];
+    const colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
 
     colors.map((color, index) => {
       let shape = document.createElementNS(svgns, "polygon");
@@ -54,8 +59,40 @@ class Triangler {
     })
   }
 
-  makeBottom() {
+  drawTrianglesFromIndex(svg, colors) {
+    while (this.bottomTriangleIndex * this.TRIANGLE_INTERVAL < this.bottomTriangleSpan) {
+      let shape = document.createElementNS(svg, "polygon");
 
+      let width = this.getRandomFromInterval(this.TRIANGLE_INTERVAL, this.TRIANGLE_MAX_WIDTH);
+      let height = this.getRandomFromInterval(this.TRIANGLE_MIN_HEIGHT, this.TRIANGLE_MAX_HEIGHT);
+      let start = this.TRIANGLE_INTERVAL * this.bottomTriangleIndex;
+      let stop = start + width;
+      let midpoint = (stop + start)/2
+      let points = `${start},0 ${stop},0 ${midpoint},${height}`;
+
+      let opacity = this.getRandomOpacityFromInterval(0.5, 0.9)
+
+      shape.setAttributeNS(null, "points", points);
+      shape.setAttributeNS(null, "fill", colors[this.bottomTriangleIndex % 4]);
+      shape.setAttributeNS(null, "fill-opacity", opacity);
+      document.getElementById('BottomSvg').appendChild(shape);
+      this.bottomTriangleIndex++;
+    }
+  }
+
+  makeBottomSvg() {
+    const svgns = "http://www.w3.org/2000/svg";
+    const colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
+
+    this.drawTrianglesFromIndex(svgns, colors);
+
+    var self = this;
+    window.addEventListener('resize', function(e) {
+      if (self.bottomTriangleSpan < window.innerWidth) {
+        self.drawTrianglesFromIndex(svgns, colors);
+        self.bottomTriangleSpan = window.innerWidth;
+      }
+    })
   }
 }
 
