@@ -4,8 +4,9 @@
 
   <head>
     <title>{% if page.title %}{{page.title}} - {% endif %}zeigenspace, a blog</title>
-    <link rel="stylesheet" type="text/css" href="jennais.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="jennais.css">
   </head>
 
   <body class="Blog">
@@ -18,16 +19,20 @@
     <div class="Contentbox">
 
       <div class="Blog-wrapper">
+
         {{ content }}
+
         <div class="Postlist">
-          <h3>Blog Posts!</h3>
-          <ul>
-            {% for post in site.posts %}
-              <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+          <div class="Postlist-content">
+            <h3>Some More Blog Posts.</h3>
+            <ul>
+              {% for post in site.posts %}
+                <li>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
 

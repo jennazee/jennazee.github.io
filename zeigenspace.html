@@ -4,7 +4,7 @@ layout: blog_temp_one
 <div>
 {% for post in site.posts %}
   <div class="Article">
-    <h2 class="Article-title">{{ post.title }}</h2>
+    <h2 class="Article-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <p class="Article-date">{{ post.date | date: '%B %-d, %Y' }}</p>
 
     <div class="Article-content">

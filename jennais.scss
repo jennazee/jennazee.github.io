@@ -27,8 +27,13 @@ body {
   min-height: 100%;
 }
 
-ul, ol {
-  padding-left: 30px;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  height: 150px;
 }
 
 .Title {
@@ -100,19 +105,20 @@ footer:before {
   position: relative;
   min-width: 150px;
   max-width: 300px;
+
+  &:nth-child(3n + 1) {
+    background-color: rgba($red, 0.7);
+  }
+
+  &:nth-child(3n + 2) {
+    background-color: rgba($orange, 0.7);
+  }
+
+  &:nth-child(3n + 3) {
+    background-color: rgba($yellow, 0.7);
+  }
 }
 
-.Portfolio__entry:nth-child(3n + 1) {
-  background-color: rgba($red, 0.7);
-}
-
-.Portfolio__entry:nth-child(3n + 2) {
-  background-color: rgba($orange, 0.7);
-}
-
-.Portfolio__entry:nth-child(3n + 3) {
-  background-color: rgba($yellow, 0.7);
-}
 
 .Portfolio__title {
   padding-bottom: 10px;
@@ -121,10 +127,10 @@ footer:before {
 .Portfolio__links {
   list-style: none;
   padding-top: 10px;
-}
 
-.Portfolio__links li {
-  display: inline-block;
+  li {
+    display: inline-block;
+  }
 }
 
 .Portfolio__links li+li:before {
@@ -135,10 +141,10 @@ footer:before {
 a {
   color: black;
   text-decoration: none;
-}
 
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .Internet {
@@ -197,7 +203,12 @@ footer {
 .Postlist {
   flex: 1;
   min-width: 300px;
-  padding: 0 20px;
+  margin-left: -20px;
+}
+
+.Postlist-content {
+  background-color: rgba($red, 0.7);
+  padding: 20px;
 }
 
 .Article-content {
@@ -218,14 +229,21 @@ footer {
   }
 }
 
-.Blog .Contentbox {
-  margin: 0 auto;
-  max-width: 1200px;
+.Blog {
+
+  .Contentbox {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  ul, ol {
+    padding-left: 30px;
+  }
 }
 
 @media (max-width: 640px) {
   .Title {
-    font-size: 72px;
+    font-size: 16vw;
   }
 
   .Subtitle {
@@ -240,5 +258,29 @@ footer {
   .Portfolio__entry {
     display: inline-block;
     flex: 0;
+  }
+
+  .Blog-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .Postlist {
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: right;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      height: 70px;
+      width: 150px;
+      background-color: rgba(255, 255, 0, 0.7);
+      margin-bottom: -30px;
+      margin-right: 20px;
+    }
+  }
+
+  .Postlist-content {
+    text-align: left;
   }
 }

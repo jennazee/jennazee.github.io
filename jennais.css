@@ -16,8 +16,12 @@ body {
   position: relative;
   min-height: 100%; }
 
-ul, ol {
-  padding-left: 30px; }
+img {
+  max-width: 100%;
+  height: auto; }
+
+svg {
+  height: 150px; }
 
 .Title {
   font-size: 96px;
@@ -80,15 +84,12 @@ footer:before {
   position: relative;
   min-width: 150px;
   max-width: 300px; }
-
-.Portfolio__entry:nth-child(3n + 1) {
-  background-color: rgba(212, 29, 0, 0.7); }
-
-.Portfolio__entry:nth-child(3n + 2) {
-  background-color: rgba(255, 147, 0, 0.7); }
-
-.Portfolio__entry:nth-child(3n + 3) {
-  background-color: rgba(255, 255, 0, 0.7); }
+  .Portfolio__entry:nth-child(3n + 1) {
+    background-color: rgba(212, 29, 0, 0.7); }
+  .Portfolio__entry:nth-child(3n + 2) {
+    background-color: rgba(255, 147, 0, 0.7); }
+  .Portfolio__entry:nth-child(3n + 3) {
+    background-color: rgba(255, 255, 0, 0.7); }
 
 .Portfolio__title {
   padding-bottom: 10px; }
@@ -96,9 +97,8 @@ footer:before {
 .Portfolio__links {
   list-style: none;
   padding-top: 10px; }
-
-.Portfolio__links li {
-  display: inline-block; }
+  .Portfolio__links li {
+    display: inline-block; }
 
 .Portfolio__links li + li:before {
   content: '|';
@@ -107,9 +107,8 @@ footer:before {
 a {
   color: black;
   text-decoration: none; }
-
-a:hover {
-  text-decoration: underline; }
+  a:hover {
+    text-decoration: underline; }
 
 .Internet {
   display: inline-block;
@@ -135,16 +134,18 @@ a:hover {
 .Internet--linkedin {
   background-image: url(linkedin.png); }
 
+.Contentbox {
+  padding-bottom: 230px; }
+
 footer {
   text-align: right;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0; }
-
-footer svg {
-  transform: rotateX(180deg);
-  margin-top: 10px; }
+  footer svg {
+    transform: rotateX(180deg);
+    margin-top: 10px; }
 
 .Blog-wrapper {
   height: 100%;
@@ -153,7 +154,11 @@ footer svg {
 .Postlist {
   flex: 1;
   min-width: 300px;
-  padding: 0 20px; }
+  margin-left: -20px; }
+
+.Postlist-content {
+  background-color: rgba(212, 29, 0, 0.7);
+  padding: 20px; }
 
 .Article-content {
   padding: 0 20px; }
@@ -161,20 +166,20 @@ footer svg {
     margin: 10px 20px;
     font-size: 1.2em; }
   .Article-content p {
-    padding: 5px 0; }
+    padding: 5px 0;
+    line-height: 1.5em; }
   .Article-content h3 {
     margin-top: 20px; }
-
-.Contentbox {
-  padding-bottom: 230px; }
 
 .Blog .Contentbox {
   margin: 0 auto;
   max-width: 1200px; }
+.Blog ul, .Blog ol {
+  padding-left: 30px; }
 
 @media (max-width: 640px) {
   .Title {
-    font-size: 72px; }
+    font-size: 16vw; }
 
   .Subtitle {
     font-size: 18px; }
@@ -185,6 +190,25 @@ footer svg {
 
   .Portfolio__entry {
     display: inline-block;
-    flex: 0; } }
+    flex: 0; }
+
+  .Blog-wrapper {
+    flex-wrap: wrap; }
+
+  .Postlist {
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: right; }
+    .Postlist:before {
+      display: inline-block;
+      content: '';
+      height: 70px;
+      width: 150px;
+      background-color: rgba(255, 255, 0, 0.7);
+      margin-bottom: -30px;
+      margin-right: 20px; }
+
+  .Postlist-content {
+    text-align: left; } }
 
 /*# sourceMappingURL=jennais.css.map */
