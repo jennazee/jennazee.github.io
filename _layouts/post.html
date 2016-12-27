@@ -1,11 +1,11 @@
 ---
 layout: blog_temp_one
 ---
-<div class="article-box content-box">
-  <h2>{{ page.title }}</h2>
-  <p class="meta">{{ page.date | date: '%B %-d, %Y' }}</p>
+<div class="Article">
+  <h2 class="Article-title">{{ page.title }}</h2>
+  <p class="Article-date">{{ page.date | date: '%B %-d, %Y' }}</p>
 
-  <div class="post">
+  <div class="Article-content">
   {{ content }}
   </div>
 </div>

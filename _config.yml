@@ -1,4 +1,5 @@
 name: 'zeigenspace, a blog'
 markdown: redcarpet
-pygments: true
+highlighter: true
 permalink: none
+exclude: [node_modules]

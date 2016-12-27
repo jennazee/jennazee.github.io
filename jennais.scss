@@ -1,17 +1,19 @@
-/*
-$purple: rgb(148, 33, 148);
+$aqua: rgb(220, 255, 255);
 $red: rgb(212, 29, 0);
 $orange: rgb(255, 147, 0);
-$yellow: rgba(255, 255, 0);
-*/
-
+$yellow: rgb(255, 255, 0);
+$violet: rgb(148, 33, 148);
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
 
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 header {
@@ -19,34 +21,40 @@ header {
 }
 
 body {
-	font-family: 'Source Sans Pro', Helvetica, sans-serif;
-  background: rgb(220, 255, 255);
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  background: $aqua;
+  position: relative;
+  min-height: 100%;
+}
+
+ul, ol {
+  padding-left: 30px;
 }
 
 .Title {
-	font-size: 96px;
-	padding-top: 10px;
-	text-align: center;
+  font-size: 96px;
+  padding-top: 10px;
+  text-align: center;
   margin: 0 20px;
 }
 
 .Subtitle {
-	text-align: center;
+  text-align: center;
   font-size: 24px;
   margin: 0 10px;
 }
 
-.Heading {
+.Heading, .Article-title {
   padding: 25px;
-  background-color: rgba(255, 147, 0, 0.7);
+  background-color: rgba($orange, 0.7);
   width: 70%;
   text-align: right;
   font-size: 2em;
   margin-top: 40px;
 }
 
-.Explanation {
-  background-color: rgba(148, 33, 148, 0.6);
+.Explanation, .Article-date {
+  background-color: rgba($violet, 0.6);
   padding: 20px;
   margin-left: 20%;
   position: relative;
@@ -57,8 +65,8 @@ body {
 }
 
 .Textbox {
-	text-align: center;
-	padding-bottom: 15px;
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 .Textbox:before, footer:before {
@@ -95,15 +103,15 @@ footer:before {
 }
 
 .Portfolio__entry:nth-child(3n + 1) {
-  background-color: rgba(212, 29, 0, 0.7);
+  background-color: rgba($red, 0.7);
 }
 
 .Portfolio__entry:nth-child(3n + 2) {
-  background-color: rgba(255, 147, 0, 0.7);
+  background-color: rgba($orange, 0.7);
 }
 
 .Portfolio__entry:nth-child(3n + 3) {
-  background-color: rgba(255, 255, 0, 0.7);
+  background-color: rgba($yellow, 0.7);
 }
 
 .Portfolio__title {
@@ -135,7 +143,7 @@ a:hover {
 
 .Internet {
   display: inline-block;
-  background: rgba(212, 29, 0, 0.7);;
+  background: rgba($red, 0.7);;
   position: relative;
   top: -15px;
   padding: 20px;
@@ -151,24 +159,68 @@ a:hover {
 }
 
 .Internet--twitter {
-	background-image: url(twitter.png);
+  background-image: url(twitter.png);
 }
 
 .Internet--github {
-	background-image: url(github_flat.png);
+  background-image: url(github_flat.png);
 }
 
 .Internet--linkedin {
-	background-image: url(linkedin.png);
+  background-image: url(linkedin.png);
+}
+
+.Contentbox {
+  padding-bottom: 230px;
 }
 
 footer {
   text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  svg {
+    transform: rotateX(180deg);
+    margin-top: 10px;
+  }
 }
 
-footer svg {
-  transform: rotateX(180deg);
-  margin-top: 10px;
+// Blog specific
+
+.Blog-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.Postlist {
+  flex: 1;
+  min-width: 300px;
+  padding: 0 20px;
+}
+
+.Article-content {
+  padding: 0 20px;
+
+  blockquote {
+    margin: 10px 20px;
+    font-size: 1.2em;
+  }
+
+  p {
+    padding: 5px 0;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    margin-top: 20px
+  }
+}
+
+.Blog .Contentbox {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 @media (max-width: 640px) {

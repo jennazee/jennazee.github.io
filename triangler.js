@@ -8,10 +8,10 @@ class Triangler {
     // this.AQUA = '#50e3c2';
     // this.PURPLE = '#9013fe';
     // this.GREEN = '#b8e986';
-    this.VIOLET = 'rgb(148, 33, 148)';
     this.RED = 'rgb(212, 29, 0)';
     this.ORANGE = 'rgb(255, 147, 0)';
     this.YELLOW = 'rgb(255, 255, 0)';
+    this.VIOLET = 'rgb(148, 33, 148)';
     this.colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
     this.TRIANGLE_INTERVAL = 100;
     this.TRIANGLE_MAX_WIDTH = 300;
