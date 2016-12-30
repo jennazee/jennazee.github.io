@@ -11,7 +11,7 @@ header {
   padding-bottom: 15px; }
 
 body {
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', Trebuchet MS, sans-serif;
   background: #dcffff;
   position: relative;
   min-height: 100%; }
@@ -56,7 +56,7 @@ svg {
   text-align: center;
   padding-bottom: 15px; }
 
-.Textbox:before, footer:before {
+.Textbox:before, .Article:before, footer:before {
   content: '';
   background-image: url(teal-heart.svg), url(teal-heart.svg), url(teal-heart.svg);
   background-repeat: no-repeat;
@@ -145,7 +145,8 @@ footer {
   left: 0; }
   footer svg {
     transform: rotateX(180deg);
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-bottom: -5px; }
 
 .Blog-wrapper {
   height: 100%;
@@ -154,14 +155,19 @@ footer {
 .Postlist {
   flex: 1;
   min-width: 300px;
-  margin-left: -20px; }
+  margin-left: -20px;
+  margin-top: 100px; }
 
 .Postlist-content {
   background-color: rgba(212, 29, 0, 0.7);
   padding: 20px; }
 
+.Article {
+  text-align: center; }
+
 .Article-content {
-  padding: 0 20px; }
+  padding: 0 20px;
+  text-align: left; }
   .Article-content blockquote {
     margin: 10px 20px;
     font-size: 1.2em; }
@@ -172,14 +178,13 @@ footer {
     margin-top: 20px; }
 
 .Blog .Contentbox {
-  margin: 0 auto;
   max-width: 1200px; }
 .Blog ul, .Blog ol {
   padding-left: 30px; }
 
 @media (max-width: 640px) {
   .Title {
-    font-size: 16vw; }
+    font-size: 15vw; }
 
   .Subtitle {
     font-size: 18px; }
@@ -205,7 +210,7 @@ footer {
       height: 70px;
       width: 150px;
       background-color: rgba(255, 255, 0, 0.7);
-      margin-bottom: -30px;
+      margin-bottom: -20px;
       margin-right: 20px; }
 
   .Postlist-content {

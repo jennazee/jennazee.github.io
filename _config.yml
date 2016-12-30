@@ -1,4 +1,4 @@
 name: 'zeigenspace, a blog'
-highlighter: true
+highlighter: rouge
 permalink: none
 exclude: [node_modules]

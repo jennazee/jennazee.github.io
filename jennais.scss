@@ -21,7 +21,7 @@ header {
 }
 
 body {
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', Trebuchet MS, sans-serif;
   background: $aqua;
   position: relative;
   min-height: 100%;
@@ -74,7 +74,7 @@ svg {
   padding-bottom: 15px;
 }
 
-.Textbox:before, footer:before {
+.Textbox:before, .Article:before, footer:before {
   content: '';
   background-image: url(teal-heart.svg), url(teal-heart.svg), url(teal-heart.svg);
   background-repeat: no-repeat;
@@ -118,7 +118,6 @@ footer:before {
     background-color: rgba($yellow, 0.7);
   }
 }
-
 
 .Portfolio__title {
   padding-bottom: 10px;
@@ -190,6 +189,7 @@ footer {
   svg {
     transform: rotateX(180deg);
     margin-top: 10px;
+    margin-bottom: -5px;
   }
 }
 
@@ -204,6 +204,7 @@ footer {
   flex: 1;
   min-width: 300px;
   margin-left: -20px;
+  margin-top: 100px;
 }
 
 .Postlist-content {
@@ -211,8 +212,13 @@ footer {
   padding: 20px;
 }
 
+.Article {
+  text-align: center;
+}
+
 .Article-content {
   padding: 0 20px;
+  text-align: left;
 
   blockquote {
     margin: 10px 20px;
@@ -232,7 +238,6 @@ footer {
 .Blog {
 
   .Contentbox {
-    margin: 0 auto;
     max-width: 1200px;
   }
 
@@ -243,7 +248,7 @@ footer {
 
 @media (max-width: 640px) {
   .Title {
-    font-size: 16vw;
+    font-size: 15vw;
   }
 
   .Subtitle {
@@ -275,7 +280,7 @@ footer {
       height: 70px;
       width: 150px;
       background-color: rgba(255, 255, 0, 0.7);
-      margin-bottom: -30px;
+      margin-bottom: -20px;
       margin-right: 20px;
     }
   }
