@@ -4,7 +4,6 @@
 
 let Triangler = require('./triangler.js');
 
-let triangler = new Triangler;
+let triangler = new Triangler();
 
-triangler.makeTopSvg();
-triangler.makeBottomSvg();
+triangler.setup();

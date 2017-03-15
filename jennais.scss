@@ -1,3 +1,5 @@
+// sass --watch jennais.scss:jennais.css
+
 $aqua: rgb(220, 255, 255);
 $red: rgb(212, 29, 0);
 $orange: rgb(255, 147, 0);
@@ -236,10 +238,9 @@ footer {
 }
 
 .Resume__entry {
-  list-style: none;
-  flex: 1;
   padding: 20px;
   position: relative;
+  display: inline-block;
 
   &:nth-child(3n + 1) {
     background-color: rgba($red, 0.7);
@@ -253,8 +254,8 @@ footer {
     background-color: rgba($yellow, 0.7);
   }
 
-  li {
-    list-style: none;
+  ul {
+    margin-left: 30px;
   }
 }
 

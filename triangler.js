@@ -1,24 +1,25 @@
 'use strict';
 
 const svgns = "http://www.w3.org/2000/svg";
+const RED = 'rgb(212, 29, 0)';
+const ORANGE = 'rgb(255, 147, 0)';
+const YELLOW = 'rgb(255, 255, 0)';
+const VIOLET = 'rgb(148, 33, 148)';
+const TRIANGLE_INTERVAL = 100;
+const TRIANGLE_MAX_WIDTH = 300;
+const TRIANGLE_MIN_HEIGHT = 50;
+const TRIANGLE_MAX_HEIGHT = 150;
 
 class Triangler {
   constructor() {
-    // this.FUSCHIA = '#bd10e0';
-    // this.AQUA = '#50e3c2';
-    // this.PURPLE = '#9013fe';
-    // this.GREEN = '#b8e986';
-    this.RED = 'rgb(212, 29, 0)';
-    this.ORANGE = 'rgb(255, 147, 0)';
-    this.YELLOW = 'rgb(255, 255, 0)';
-    this.VIOLET = 'rgb(148, 33, 148)';
-    this.colors = [this.VIOLET, this.RED, this.ORANGE, this.YELLOW];
-    this.TRIANGLE_INTERVAL = 100;
-    this.TRIANGLE_MAX_WIDTH = 300;
-    this.TRIANGLE_MIN_HEIGHT = 50;
-    this.TRIANGLE_MAX_HEIGHT = 150;
+    this.colors = [VIOLET, RED, ORANGE, YELLOW];
     this.bottomTriangleSpan = window.innerWidth;
     this.bottomTriangleIndex = 0;
+  }
+
+  setup() {
+    this.makeTopSvg();
+    this.makeBottomSvg();
   }
 
   getRandomFromInterval(min, max) {
@@ -29,57 +30,52 @@ class Triangler {
     return Math.random() * (max - min) + min;
   }
 
-  makeTopSvg() {
-    this.colors.map((color, index) => {
-      let shape = document.createElementNS(svgns, "polygon");
+  drawTriangle(index, color) {
+    let shape = document.createElementNS(svgns, "polygon");
 
-      let width = this.getRandomFromInterval(this.TRIANGLE_INTERVAL, this.TRIANGLE_MAX_WIDTH);
-      let height = this.getRandomFromInterval(this.TRIANGLE_MIN_HEIGHT, this.TRIANGLE_MAX_HEIGHT);
-      let start = this.TRIANGLE_INTERVAL * index;
-      let stop = start + width;
-      let midpoint = (stop + start)/2
-      let points = `${start},0 ${stop},0 ${midpoint},${height}`;
+    let width = this.getRandomFromInterval(TRIANGLE_INTERVAL, TRIANGLE_MAX_WIDTH);
+    let height = this.getRandomFromInterval(TRIANGLE_MIN_HEIGHT, TRIANGLE_MAX_HEIGHT);
+    let start = TRIANGLE_INTERVAL * index;
+    let stop = start + width;
+    let midpoint = (stop + start)/2;
+    let points = `${start},0 ${stop},0 ${midpoint},${height}`;
 
-      let opacity = this.getRandomOpacityFromInterval(0.5, 0.9)
+    let opacity = this.getRandomOpacityFromInterval(0.5, 0.9);
 
-      shape.setAttributeNS(null, "points", points);
-      shape.setAttributeNS(null, "fill", color);
-      shape.setAttributeNS(null, "fill-opacity", opacity);
-      document.getElementById('TopSvg').appendChild(shape);
-    })
+    shape.setAttributeNS(null, 'points', points);
+    shape.setAttributeNS(null, 'fill', color);
+    shape.setAttributeNS(null, 'fill-opacity', opacity);
+
+    return shape;
   }
 
-  drawTrianglesFromIndex(svg) {
-    while (this.bottomTriangleIndex * this.TRIANGLE_INTERVAL < this.bottomTriangleSpan) {
-      let shape = document.createElementNS(svg, "polygon");
+  makeTopSvg() {
+    let topSvg = document.getElementById('TopSvg');
+    this.colors.forEach((color, index) => {
+      let shape = this.drawTriangle(index, color);
+      topSvg.appendChild(shape);
+    });
+  }
 
-      let width = this.getRandomFromInterval(this.TRIANGLE_INTERVAL, this.TRIANGLE_MAX_WIDTH);
-      let height = this.getRandomFromInterval(this.TRIANGLE_MIN_HEIGHT, this.TRIANGLE_MAX_HEIGHT);
-      let start = this.TRIANGLE_INTERVAL * this.bottomTriangleIndex;
-      let stop = start + width;
-      let midpoint = (stop + start)/2
-      let points = `${start},0 ${stop},0 ${midpoint},${height}`;
-
-      let opacity = this.getRandomOpacityFromInterval(0.5, 0.9)
-
-      shape.setAttributeNS(null, "points", points);
-      shape.setAttributeNS(null, "fill", this.colors[this.bottomTriangleIndex % 4]);
-      shape.setAttributeNS(null, "fill-opacity", opacity);
-      document.getElementById('BottomSvg').appendChild(shape);
+  drawTrianglesFromIndex() {
+    let bottomSvg = document.getElementById('BottomSvg');
+    while (this.bottomTriangleIndex * TRIANGLE_INTERVAL < this.bottomTriangleSpan) {
+      let color = this.colors[this.bottomTriangleIndex % 4];
+      let shape = this.drawTriangle(this.bottomTriangleIndex, color);
+      bottomSvg.appendChild(shape);
       this.bottomTriangleIndex++;
     }
   }
 
   makeBottomSvg() {
-    this.drawTrianglesFromIndex(svgns);
+    this.drawTrianglesFromIndex();
 
-    var self = this;
-    window.addEventListener('resize', function(e) {
-      if (self.bottomTriangleSpan < window.innerWidth) {
-        self.drawTrianglesFromIndex(svgns);
-        self.bottomTriangleSpan = window.innerWidth;
+    window.addEventListener('resize', (e) => {
+      if (this.bottomTriangleSpan < window.innerWidth) {
+        window.requestAnimationFrame(this.drawTrianglesFromIndex.bind(this));
+        this.bottomTriangleSpan = window.innerWidth;
       }
-    })
+    });
   }
 }
 
