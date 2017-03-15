@@ -235,6 +235,29 @@ footer {
   }
 }
 
+.Resume__entry {
+  list-style: none;
+  flex: 1;
+  padding: 20px;
+  position: relative;
+
+  &:nth-child(3n + 1) {
+    background-color: rgba($red, 0.7);
+  }
+
+  &:nth-child(3n + 2) {
+    background-color: rgba($violet, 0.6);
+  }
+
+  &:nth-child(3n + 3) {
+    background-color: rgba($yellow, 0.7);
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
 .Blog {
 
   .Contentbox {

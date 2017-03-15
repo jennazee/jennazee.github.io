@@ -177,6 +177,18 @@ footer {
   .Article-content h3 {
     margin-top: 20px; }
 
+.Resume__entry {
+  list-style: none;
+  flex: 1;
+  padding: 20px;
+  position: relative; }
+  .Resume__entry:nth-child(3n + 1) {
+    background-color: rgba(212, 29, 0, 0.7); }
+  .Resume__entry:nth-child(3n + 2) {
+    background-color: rgba(148, 33, 148, 0.6); }
+  .Resume__entry:nth-child(3n + 3) {
+    background-color: rgba(255, 255, 0, 0.7); }
+
 .Blog .Contentbox {
   max-width: 1200px; }
 .Blog ul, .Blog ol {
