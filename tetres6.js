@@ -1,0 +1,1 @@
+import tetres6 from 'tetres6';

@@ -177,6 +177,9 @@ footer {
   .Article-content h3 {
     margin-top: 20px; }
 
+.Resume {
+  display: flex; }
+
 .Resume__entry {
   padding: 20px;
   position: relative;
@@ -194,6 +197,11 @@ footer {
   max-width: 1200px; }
 .Blog ul, .Blog ol {
   padding-left: 30px; }
+
+.TetrisHolder {
+  margin: 30px auto;
+  width: 400px;
+  height: 660px; }
 
 @media (max-width: 640px) {
   .Title {
