@@ -1,5 +1,3 @@
-// sass --watch jennais.scss:jennais.css
-
 $aqua: rgb(220, 255, 255);
 $red: rgb(212, 29, 0);
 $orange: rgb(255, 147, 0);
@@ -235,6 +233,10 @@ footer {
   h3 {
     margin-top: 20px
   }
+}
+
+.Resume {
+  display: flex;
 }
 
 .Resume__entry {

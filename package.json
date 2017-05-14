@@ -4,7 +4,9 @@
   "description": "jenna zeigen's cute website!",
   "main": "jz-bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-js": "browserify jz.js -o jz-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
+    "sass": "sass --watch jennais.scss:jennais.css"
   },
   "repository": {
     "type": "git",
