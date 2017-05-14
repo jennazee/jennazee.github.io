@@ -1,5 +1,3 @@
-'use strict';
-
 const svgns = "http://www.w3.org/2000/svg";
 const RED = 'rgb(212, 29, 0)';
 const ORANGE = 'rgb(255, 147, 0)';
@@ -10,7 +8,7 @@ const TRIANGLE_MAX_WIDTH = 300;
 const TRIANGLE_MIN_HEIGHT = 50;
 const TRIANGLE_MAX_HEIGHT = 150;
 
-class Triangler {
+export default class Triangler {
   constructor() {
     this.colors = [VIOLET, RED, ORANGE, YELLOW];
     this.bottomTriangleSpan = window.innerWidth;
@@ -31,16 +29,16 @@ class Triangler {
   }
 
   drawTriangle(index, color) {
-    let shape = document.createElementNS(svgns, "polygon");
+    const shape = document.createElementNS(svgns, "polygon");
 
-    let width = this.getRandomFromInterval(TRIANGLE_INTERVAL, TRIANGLE_MAX_WIDTH);
-    let height = this.getRandomFromInterval(TRIANGLE_MIN_HEIGHT, TRIANGLE_MAX_HEIGHT);
-    let start = TRIANGLE_INTERVAL * index;
-    let stop = start + width;
-    let midpoint = (stop + start)/2;
-    let points = `${start},0 ${stop},0 ${midpoint},${height}`;
+    const width = this.getRandomFromInterval(TRIANGLE_INTERVAL, TRIANGLE_MAX_WIDTH);
+    const height = this.getRandomFromInterval(TRIANGLE_MIN_HEIGHT, TRIANGLE_MAX_HEIGHT);
+    const start = TRIANGLE_INTERVAL * index;
+    const stop = start + width;
+    const midpoint = (stop + start)/2;
+    const points = `${start},0 ${stop},0 ${midpoint},${height}`;
 
-    let opacity = this.getRandomOpacityFromInterval(0.5, 0.9);
+    const opacity = this.getRandomOpacityFromInterval(0.5, 0.9);
 
     shape.setAttributeNS(null, 'points', points);
     shape.setAttributeNS(null, 'fill', color);
@@ -50,18 +48,18 @@ class Triangler {
   }
 
   makeTopSvg() {
-    let topSvg = document.getElementById('TopSvg');
+    const topSvg = document.getElementById('TopSvg');
     this.colors.forEach((color, index) => {
-      let shape = this.drawTriangle(index, color);
+      const shape = this.drawTriangle(index, color);
       topSvg.appendChild(shape);
     });
   }
 
   drawTrianglesFromIndex() {
-    let bottomSvg = document.getElementById('BottomSvg');
+    const bottomSvg = document.getElementById('BottomSvg');
     while (this.bottomTriangleIndex * TRIANGLE_INTERVAL < this.bottomTriangleSpan) {
-      let color = this.colors[this.bottomTriangleIndex % 4];
-      let shape = this.drawTriangle(this.bottomTriangleIndex, color);
+      const color = this.colors[this.bottomTriangleIndex % 4];
+      const shape = this.drawTriangle(this.bottomTriangleIndex, color);
       bottomSvg.appendChild(shape);
       this.bottomTriangleIndex++;
     }
@@ -78,5 +76,3 @@ class Triangler {
     });
   }
 }
-
-module.exports = Triangler;

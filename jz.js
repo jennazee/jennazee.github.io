@@ -1,7 +1,6 @@
 'use strict';
 
-let Triangler = require('./triangler.js');
+import Triangler from './triangler.js';
 
-let triangler = new Triangler();
-
+const triangler = new Triangler();
 triangler.setup();

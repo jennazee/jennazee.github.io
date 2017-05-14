@@ -69,14 +69,14 @@ svg {
   font-size: 18px;
 }
 
-.Textbox {
+.Textbox, .Resumebox {
   text-align: center;
   padding-bottom: 15px;
 }
 
-.Textbox:before, .Article:before, footer:before {
+.Textbox:before, .Article:before, .Resumebox:before, footer:before {
   content: '';
-  background-image: url(teal-heart.svg), url(teal-heart.svg), url(teal-heart.svg);
+  background-image: url(assets/teal-heart.svg), url(assets/teal-heart.svg), url(assets/teal-heart.svg);
   background-repeat: no-repeat;
   background-position: left, right, center;
   background-size: 20px;
@@ -164,15 +164,15 @@ a {
 }
 
 .Internet--twitter {
-  background-image: url(twitter.png);
+  background-image: url(assets/twitter.png);
 }
 
 .Internet--github {
-  background-image: url(github_flat.png);
+  background-image: url(assets/github_flat.png);
 }
 
 .Internet--linkedin {
-  background-image: url(linkedin.png);
+  background-image: url(assets/linkedin.png);
 }
 
 .Contentbox {
@@ -239,10 +239,16 @@ footer {
   display: flex;
 }
 
+.Resume__download {
+  text-align: center;
+  padding-right: 30px;
+}
+
 .Resume__entry {
   padding: 20px;
   position: relative;
-  display: inline-block;
+  width: fit-content;
+  text-align: left;
 
   &:nth-child(3n + 1) {
     background-color: rgba($red, 0.7);
@@ -262,7 +268,6 @@ footer {
 }
 
 .Blog {
-
   .Contentbox {
     max-width: 1200px;
   }
