@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile-main": "browserify jz.js -o jz-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
-    "compile-tetres6": "browserify tetres6.js -o tetres6-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
-    "sass": "sass --watch jennais.scss:jennais.css"
+    "compile-tetris": "browserify tetres6.js -o tetres6-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
+    "compile-markov": "browserify meat-markov.js -o markov-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
+    "sass": "sass jennais.scss:jennais.css"
   },
   "repository": {
     "type": "git",

@@ -36,6 +36,10 @@ svg {
   height: 150px;
 }
 
+.padding-top-30 {
+  padding-top: 30px;
+}
+
 .Title {
   font-size: 96px;
   padding-top: 10px;
@@ -240,8 +244,7 @@ footer {
 }
 
 .Resume__download {
-  text-align: center;
-  padding-right: 30px;
+  display: inline-block;
 }
 
 .Resume__entry {
@@ -281,6 +284,19 @@ footer {
   margin: 30px auto;
   width: 400px;
   height: 660px;
+}
+
+.Button {
+  background-color: rgba($violet, 0.6);
+  border: 0;
+  font-size: 18px;
+  padding: 20px;
+  font-family: inherit;
+  text-align: center;
+
+  &:hover {
+    background-color: rgba($violet, 0.7);
+  }
 }
 
 @media (max-width: 640px) {
