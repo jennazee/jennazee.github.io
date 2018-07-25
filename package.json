@@ -9,7 +9,8 @@
     "compile-tetris": "browserify tetres6.js -o tetres6-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
     "compile-glitchrothko": "sh scripts/compile-glitchrothko.sh",
     "compile-bct": "sh scripts/compile-bct.sh",
-    "sass": "sass jennais.scss:jennais.css"
+    "sass": "sass jennais.scss:jennais.css --style compressed",
+    "sass-watch": "sass --watch jennais.scss:jennais.css --style compressed"
   },
   "repository": {
     "type": "git",
