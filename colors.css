@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+body {
+    font-family: "Source Sans Pro",Trebuchet MS,sans-serif;
+}
+
+.color {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.first-light {
+    background-color: #f0e3df;
+}
+
+.breathless {
+    background-color: #d6c2be;
+}
+
+.parachute-blush {
+    background-color: #e6dcdc;
+}
+
+.silky-smooth {
+    background-color: #efe3df;
+}
+
+.paisley-pink {
+    background-color: #e9d8d6;
+}
+
+.silken-ribbon {
+    background-color: #e8dbdd;
+}
+
+.white-lilac {
+    background-color: #efe7e7;
+}
+
+.silver-peony {
+    background-color: #dad6db;
+}
+
+.rosily {
+    background-color: #f0e3e4;
+}
+
+.anemone {
+    background-color: #f0e2e4;
+}
