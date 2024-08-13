@@ -3,3 +3,4 @@ node_modules
 _site
 .sass-cache
 jennais.css.map
+.DS_Store
