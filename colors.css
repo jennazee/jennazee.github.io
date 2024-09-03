@@ -4,6 +4,11 @@ body {
     font-family: "Source Sans Pro",Trebuchet MS,sans-serif;
 }
 
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .color {
     width: 300px;
     height: 300px;
@@ -57,4 +62,12 @@ body {
 
 .wallflower {
     background-color: #dbcfd4;
+}
+
+.organdy {
+    background-color: #e0d2d1;
+}
+
+.bridal-rose {
+    background-color: #ebe2df;
 }
