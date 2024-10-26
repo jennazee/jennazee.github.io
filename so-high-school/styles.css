@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  min-width: 540px;
+}
+.image {
+  height: 800px;
+}
+.tracklist {
+  position: absolute;
+  top: 200px;
+  min-width: 540px;
+}
+.track::first-letter {
+  font-weight: 600;
+}
+.track {
+  margin: 11px;
+  font-family: Courier New;
+  font-weight: 400;
+  display: inline-block;
+  background-color: #fff;
+}
+.title {
+  display: block;
+  font-size: 18px;
+  padding: 4px;
+}
+.artist {
+  display: block;
+  font-size: 14px;
+  padding: 4px;
+}
+.cd {
+  position: fixed;
+  width: 500px;
+  margin: 20px;
+  bottom: 0;
+  right: 0;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 5000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 5000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+iframe {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  right: -200px;
+  width: 100px;
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .cd {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+  }
+}
+.spotify-link,
+.hint {
+  font-family: courier new;
+  background-color: black;
+  padding: 4px;
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  font-size: small;
+  color: cyan;
+}
+.hidden {
+  visibility: hidden;
+}
