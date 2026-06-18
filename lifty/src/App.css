@@ -1,0 +1,24 @@
+.weight {
+  font-size: 24px;
+  padding-right: 8px;
+}
+
+.repInput {
+  width: 64px;
+  height: 36px;
+  background-color: #e6cde9;
+  font-size: 24px;
+  font-family: inherit;
+  border-color: #9c27b0;
+  border-style: solid;
+}
+
+.title {
+  background-color: #e6cde9;
+}
+
+input::placeholder {
+  font-weight: normal;
+  opacity: 0.5;
+  color: #9c27b0;
+}
