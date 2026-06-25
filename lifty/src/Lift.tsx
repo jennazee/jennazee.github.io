@@ -51,7 +51,7 @@ function plateMath(weight) {
     }
     continue;
   }
-  return { bar: 45, plates: plateStack };
+  return { bar, plates: plateStack };
 }
 
 export function Lift({ week, liftName, tm }) {
@@ -59,7 +59,7 @@ export function Lift({ week, liftName, tm }) {
     week,
     tm,
   );
-  if (liftName === "Squat" || liftName === "Deadlift") {
+  if (liftName === "squat" || liftName === "deadlift") {
     weights = [
       ...weights,
       weights[0],
@@ -69,11 +69,13 @@ export function Lift({ week, liftName, tm }) {
       weights[0],
     ];
   }
+  const liftNameForTitle =
+    liftName === "shoulder" ? "shoulder press" : liftName;
   return (
     <div className="LiftBox">
-      <h2>{liftName}</h2>
+      <h2>{liftNameForTitle}</h2>
       <ol>
-        {weights.map(({ weight, reps }) => (
+        {weights.map(({ weight, reps }, index) => (
           <li>
             <span className="weight">{weight}</span>
             <span className="plateMaths">
@@ -82,11 +84,12 @@ export function Lift({ week, liftName, tm }) {
             </span>
             <div>
               <input
-                id={`liftName-${weight}`}
+                id={`${liftName.toLowerCase()}-${weight}-${index}`}
+                name={`${liftName}-${weight}-${index}`}
                 className="repInput"
                 placeholder={reps === Infinity ? "🚀" : reps.toString()}
               />
-              <label htmlFor={`liftName-${weight}`}> reps</label>
+              <label htmlFor={`${liftName}-${weight}-${index}`}> reps</label>
             </div>
           </li>
         ))}
