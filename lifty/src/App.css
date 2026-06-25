@@ -22,3 +22,18 @@ input::placeholder {
   opacity: 0.5;
   color: #9c27b0;
 }
+
+button {
+  height: 36px;
+  background-color: #e6cde9;
+  font-size: 24px;
+  font-family: inherit;
+  border-color: #9c27b0;
+  border-style: solid;
+  margin: 8px;
+}
+
+.oneRmLabel {
+  display: block;
+  margin: 8px 0;
+}
