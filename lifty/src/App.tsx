@@ -4,17 +4,13 @@ import { Lift } from "./Lift.tsx";
 
 type WeekNumber = 1 | 2 | 3 | 4;
 type DayType = "Deadlift & Shoulder Press" | "Squat & Bench";
+type SetDayTypeType = (d: DayType) => void;
 type SetEntry = { weight: number; reps: number };
 type LiftHistoryEntry = {
   timestamp: number;
   week: WeekNumber;
   cycle: number;
-  lifts:
-    | { deadlift: Array<SetEntry>; shoulder: Array<SetEntry> }
-    | {
-        squat: Array<SetEntry>;
-        bench: Array<SetEntry>;
-      };
+  lifts: { [K in LiftType]?: SetEntry[] };
 };
 
 type StoredLiftyData = {
@@ -27,7 +23,10 @@ type StoredLiftyData = {
   liftHistory: LiftHistoryEntry[];
 };
 
+type SubmitButtonEventHander = (e: React.SubmitEvent<HTMLFormElement>) => void;
+
 const lifts = ["deadlift", "squat", "bench", "shoulder"] as const;
+type LiftType = (typeof lifts)[number];
 
 function App() {
   const [deadliftTM, setDeadliftTM] = useState(0);
@@ -36,12 +35,15 @@ function App() {
   const [squatTM, setSquatTM] = useState(0);
   const [week, setWeek] = useState<WeekNumber>(1);
   const [cycle, setCycle] = useState<number>(1);
-  const [dayType, setDayType] = useState<DayType>(undefined);
+  const [dayType, setDayType] = useState<DayType>();
   const [liftHistory, setLiftHistory] = useState<LiftHistoryEntry[]>([]);
 
   useEffect(() => {
     const rawData = localStorage.getItem("liftyData");
     let parsedData: StoredLiftyData;
+    if (!rawData) {
+      return;
+    }
     try {
       parsedData = JSON.parse(rawData);
       setBenchTM(parsedData.benchTM);
@@ -54,17 +56,31 @@ function App() {
     } catch (e) {}
   }, []);
 
-  const setTms = (e) => {
+  const setTms: SubmitButtonEventHander = (
+    e: React.SubmitEvent<HTMLFormElement>,
+  ) => {
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
     const entries = Object.fromEntries(formData.entries());
 
-    const calcDeadliftTM = entries.deadlift1rm * 0.9;
-    const calcSquatTM = entries.squat1rm * 0.9;
-    const calcBenchTM = entries.bench1rm * 0.9;
-    const calcShoulderTM = entries.shoulder1rm * 0.9;
+    const calcDeadliftTM =
+      typeof entries.deadlift1rm === "string"
+        ? parseInt(entries.deadlift1rm) * 0.9
+        : 0;
+    const calcSquatTM =
+      typeof entries.squat1rm === "string"
+        ? parseInt(entries.squat1rm) * 0.9
+        : 0;
+    const calcBenchTM =
+      typeof entries.bench1rm === "string"
+        ? parseInt(entries.bench1rm) * 0.9
+        : 0;
+    const calcShoulderTM =
+      typeof entries.shoulder1rm === "string"
+        ? parseInt(entries.shoulder1rm) * 0.9
+        : 0;
     setDeadliftTM(calcDeadliftTM);
     setSquatTM(calcSquatTM);
     setBenchTM(calcBenchTM);
@@ -84,13 +100,14 @@ function App() {
     localStorage.setItem("liftyData", data);
   };
 
-  const addLift = (e) => {
+  const addLift = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("addLift called");
 
     const form = e.target;
     const formData = new FormData(form);
-    const entries: [string, number][] = Array.from(formData.entries());
-    let lifts;
+    const entries = Array.from(formData.entries());
+    let lifts: { [K in LiftType]?: SetEntry[] } = {};
     if (
       entries[0][0].split("-")[0] === "deadlift" ||
       entries[0][0].split("-")[0] === "shoulder"
@@ -106,10 +123,17 @@ function App() {
       lifts,
     };
     entries.forEach(([liftCode, reps]) => {
-      const [lift, weight, index] = liftCode.split("-");
+      const [lift, weight, index] = liftCode.split("-") as [
+        LiftType,
+        string,
+        string,
+      ];
       const weightNum = parseInt(weight);
-      const setEntry: SetEntry = { weight: weightNum, reps };
-      newLift.lifts[lift][index] = setEntry;
+      const repsNum = typeof reps === "string" ? parseInt(reps) : 0;
+      const setEntry: SetEntry = { weight: weightNum, reps: repsNum };
+      if (newLift.lifts[lift]) {
+        newLift.lifts[lift][parseInt(index)] = setEntry;
+      }
     });
 
     let newData: StoredLiftyData;
@@ -128,6 +152,7 @@ function App() {
       localStorage.setItem("liftyData", data);
     } else if (
       week !== 4 &&
+      liftHistory[liftHistory.length - 1] &&
       liftHistory[liftHistory.length - 1].week === week
     ) {
       newData = {
@@ -135,7 +160,7 @@ function App() {
         shoulderTM,
         squatTM,
         deadliftTM,
-        week: week + 1,
+        week: (week + 1) as WeekNumber,
         cycle,
         liftHistory: [...liftHistory, newLift],
       };
@@ -153,6 +178,7 @@ function App() {
       };
     }
     const data: string = JSON.stringify(newData);
+    console.log("setting", data);
     localStorage.setItem("liftyData", data);
   };
 
@@ -194,7 +220,7 @@ function App() {
 
 export default App;
 
-function DayTypePicker({ setDayType }) {
+function DayTypePicker({ setDayType }: { setDayType: SetDayTypeType }) {
   return (
     <div>
       <button onClick={() => setDayType("Squat & Bench")}>
@@ -207,7 +233,29 @@ function DayTypePicker({ setDayType }) {
   );
 }
 
-function SquatBenchDay({ squatTM, benchTM, week, setDayType, addLift }) {
+type BaseDayProps = {
+  week: WeekNumber;
+  setDayType: SetDayTypeType;
+  addLift: SubmitButtonEventHander;
+};
+
+type SquatBenchDayProps = BaseDayProps & {
+  squatTM: number;
+  benchTM: number;
+};
+
+type DeadliftPressDayProps = BaseDayProps & {
+  deadliftTM: number;
+  shoulderTM: number;
+};
+
+function SquatBenchDay({
+  squatTM,
+  benchTM,
+  week,
+  setDayType,
+  addLift,
+}: SquatBenchDayProps) {
   return (
     <form onSubmit={addLift}>
       <Lift liftName={"squat"} tm={squatTM} week={week}></Lift>
@@ -226,7 +274,7 @@ function DeadliftPressDay({
   week,
   setDayType,
   addLift,
-}) {
+}: DeadliftPressDayProps) {
   return (
     <form onSubmit={addLift}>
       <Lift liftName={"deadlift"} tm={deadliftTM} week={week}></Lift>
@@ -239,7 +287,10 @@ function DeadliftPressDay({
   );
 }
 
-function WelcomeScreen({ setTms }) {
+type WelcomeScreenProps = {
+  setTms: SubmitButtonEventHander;
+};
+function WelcomeScreen({ setTms }: WelcomeScreenProps) {
   return (
     <form onSubmit={setTms}>
       <h3>oh hey! let's get your 1 rep maxes!</h3>
@@ -254,6 +305,7 @@ function WelcomeScreen({ setTms }) {
                 className="repInput"
                 id={`${lift}1rm`}
                 name={`${lift}1rm`}
+                type="number"
               ></input>
             </li>
           );
