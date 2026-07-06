@@ -297,7 +297,7 @@ function WelcomeScreen({ setTms }: WelcomeScreenProps) {
       <ul>
         {lifts.map((lift) => {
           return (
-            <li>
+            <li key={`${lift}1rm-box`}>
               <label htmlFor={`${lift}1rm`} className="oneRmLabel">
                 {lift === "shoulder" ? "shoulder press" : lift}
               </label>
