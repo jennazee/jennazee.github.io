@@ -36,7 +36,7 @@ function calculateWeights(week: WeekNumber, tm: number) {
 
 const possiblePlates = [45, 35, 25, 10, 5, 2.5];
 
-function plateMath(weight) {
+function plateMath(weight: number) {
   const bar = weight >= 55 ? 45 : 15;
   const plateStack = [];
 
@@ -53,8 +53,12 @@ function plateMath(weight) {
   }
   return { bar, plates: plateStack };
 }
-
-export function Lift({ week, liftName, tm }) {
+type LiftProps = {
+  week: WeekNumber;
+  liftName: string;
+  tm: number;
+};
+export function Lift({ week, liftName, tm }: LiftProps) {
   let weights: Array<{ weight: number; reps: number }> = calculateWeights(
     week,
     tm,
@@ -88,6 +92,7 @@ export function Lift({ week, liftName, tm }) {
                 name={`${liftName}-${weight}-${index}`}
                 className="repInput"
                 placeholder={reps === Infinity ? "🚀" : reps.toString()}
+                type="number"
               />
               <label htmlFor={`${liftName}-${weight}-${index}`}> reps</label>
             </div>
