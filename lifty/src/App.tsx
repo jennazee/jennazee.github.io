@@ -184,7 +184,7 @@ function App() {
 
   const isMissingTM = !deadliftTM || !squatTM || !shoulderTM || !benchTM;
 
-  const title = "it's lifty! <3";
+  const title = "it's lifty!";
   return (
     <div>
       <h1 className="title">{title}</h1>

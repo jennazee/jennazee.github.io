@@ -24,13 +24,50 @@ input::placeholder {
 }
 
 button {
-  height: 36px;
+  height: 72px;
   background-color: #e6cde9;
   font-size: 24px;
   font-family: inherit;
   border-color: #9c27b0;
   border-style: solid;
   margin: 8px;
+  color: black;
+}
+
+body {
+  margin: 0;
+  background-color: aquamarine;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 80px;
+  margin: 0;
+  padding-left: 16px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 16px 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+h3 {
+  font-weight: normal;
+  padding: 0 8px;
 }
 
 .oneRmLabel {
