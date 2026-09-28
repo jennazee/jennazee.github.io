@@ -28,6 +28,11 @@ type SubmitButtonEventHander = (e: React.SubmitEvent<HTMLFormElement>) => void;
 const lifts = ["deadlift", "squat", "bench", "shoulder"] as const;
 type LiftType = (typeof lifts)[number];
 
+// Using Epley because it's way simpler
+function calculate1RM(weight: number, reps: number) {
+  return weight * ((1 + reps) / 30);
+}
+
 function App() {
   const [deadliftTM, setDeadliftTM] = useState(0);
   const [shoulderTM, setShoulderTM] = useState(0);
@@ -37,6 +42,7 @@ function App() {
   const [cycle, setCycle] = useState<number>(1);
   const [dayType, setDayType] = useState<DayType>();
   const [liftHistory, setLiftHistory] = useState<LiftHistoryEntry[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const rawData = localStorage.getItem("liftyData");
@@ -95,14 +101,12 @@ function App() {
       cycle,
       liftHistory: [],
     };
-    console.log(initialData);
     const data: string = JSON.stringify(initialData);
     localStorage.setItem("liftyData", data);
   };
 
   const addLift = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("addLift called");
 
     const form = e.target;
     const formData = new FormData(form);
@@ -122,7 +126,11 @@ function App() {
       cycle,
       lifts,
     };
+    let isIncomplete = false;
     entries.forEach(([liftCode, reps]) => {
+      if (typeof reps === "string" && reps === "") {
+        isIncomplete = true;
+      }
       const [lift, weight, index] = liftCode.split("-") as [
         LiftType,
         string,
@@ -136,57 +144,62 @@ function App() {
       }
     });
 
-    let newData: StoredLiftyData;
-    // this presumes one lift day of each type, which is safe for me for now!
-    if (week === 4 && liftHistory[liftHistory.length - 1].week === 4) {
-      newData = {
-        benchTM: benchTM + 5,
-        shoulderTM: shoulderTM + 5,
-        squatTM: squatTM + 10,
-        deadliftTM: deadliftTM + 10,
-        week: 1,
-        cycle: cycle + 1,
-        liftHistory: [...liftHistory, newLift],
-      };
-      const data: string = JSON.stringify(newData);
-      localStorage.setItem("liftyData", data);
-    } else if (
-      week !== 4 &&
-      liftHistory[liftHistory.length - 1] &&
-      liftHistory[liftHistory.length - 1].week === week
-    ) {
-      newData = {
-        benchTM,
-        shoulderTM,
-        squatTM,
-        deadliftTM,
-        week: (week + 1) as WeekNumber,
-        cycle,
-        liftHistory: [...liftHistory, newLift],
-      };
-      const data: string = JSON.stringify(newData);
-      localStorage.setItem("liftyData", data);
+    if (isIncomplete) {
+      setError("You still have lifts left!");
     } else {
-      newData = {
-        benchTM,
-        shoulderTM,
-        squatTM,
-        deadliftTM,
-        week,
-        cycle,
-        liftHistory: [...liftHistory, newLift],
-      };
+      let newData: StoredLiftyData;
+      // this presumes one lift day of each type, which is safe for me for now!
+      if (week === 4 && liftHistory[liftHistory.length - 1].week === 4) {
+        newData = {
+          benchTM: benchTM + 5,
+          shoulderTM: shoulderTM + 5,
+          squatTM: squatTM + 10,
+          deadliftTM: deadliftTM + 10,
+          week: 1,
+          cycle: cycle + 1,
+          liftHistory: [...liftHistory, newLift],
+        };
+        const data: string = JSON.stringify(newData);
+        localStorage.setItem("liftyData", data);
+      } else if (
+        week !== 4 &&
+        liftHistory[liftHistory.length - 1] &&
+        liftHistory[liftHistory.length - 1].week === week
+      ) {
+        newData = {
+          benchTM,
+          shoulderTM,
+          squatTM,
+          deadliftTM,
+          week: (week + 1) as WeekNumber,
+          cycle,
+          liftHistory: [...liftHistory, newLift],
+        };
+        const data: string = JSON.stringify(newData);
+        localStorage.setItem("liftyData", data);
+      } else {
+        newData = {
+          benchTM,
+          shoulderTM,
+          squatTM,
+          deadliftTM,
+          week,
+          cycle,
+          liftHistory: [...liftHistory, newLift],
+        };
+      }
+      const data: string = JSON.stringify(newData);
+      localStorage.setItem("liftyData", data);
+      setError(null);
+      setDayType(undefined);
     }
-    const data: string = JSON.stringify(newData);
-    console.log("setting", data);
-    localStorage.setItem("liftyData", data);
   };
 
   const isMissingTM = !deadliftTM || !squatTM || !shoulderTM || !benchTM;
 
   const title = "it's lifty!";
   return (
-    <div>
+    <div className="app">
       <h1 className="title">{title}</h1>
       {isMissingTM ? (
         <WelcomeScreen setTms={setTms} />
@@ -201,6 +214,7 @@ function App() {
               week={week}
               setDayType={setDayType}
               addLift={addLift}
+              error={error}
             />
           ) : null}
           {dayType === "Squat & Bench" ? (
@@ -210,6 +224,7 @@ function App() {
               week={week}
               setDayType={setDayType}
               addLift={addLift}
+              error={error}
             />
           ) : null}
         </>
@@ -237,6 +252,7 @@ type BaseDayProps = {
   week: WeekNumber;
   setDayType: SetDayTypeType;
   addLift: SubmitButtonEventHander;
+  error: string | null;
 };
 
 type SquatBenchDayProps = BaseDayProps & {
@@ -255,15 +271,20 @@ function SquatBenchDay({
   week,
   setDayType,
   addLift,
+  error,
 }: SquatBenchDayProps) {
   return (
     <form onSubmit={addLift}>
       <Lift liftName={"squat"} tm={squatTM} week={week}></Lift>
       <Lift liftName={"bench"} tm={benchTM} week={week}></Lift>
       <button type="submit">i'm done!</button>
-      <button onClick={() => setDayType("Deadlift & Shoulder Press")}>
+      <button
+        className="smaller"
+        onClick={() => setDayType("Deadlift & Shoulder Press")}
+      >
         jk i want the other day!
       </button>
+      {error ? <div className="error">{error}</div> : null}
     </form>
   );
 }
@@ -274,15 +295,17 @@ function DeadliftPressDay({
   week,
   setDayType,
   addLift,
+  error,
 }: DeadliftPressDayProps) {
   return (
     <form onSubmit={addLift}>
       <Lift liftName={"deadlift"} tm={deadliftTM} week={week}></Lift>
       <Lift liftName={"shoulder"} tm={shoulderTM} week={week}></Lift>
       <button type="submit">i'm done!</button>
-      <button onClick={() => setDayType("Squat & Bench")}>
+      <button className="smaller" onClick={() => setDayType("Squat & Bench")}>
         jk i want the other day!
       </button>
+      {error ? <div className="error">{error}</div> : null}
     </form>
   );
 }

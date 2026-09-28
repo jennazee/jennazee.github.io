@@ -1,3 +1,8 @@
+.app {
+  --purple: #9c27b0;
+  --lilac: #e6cde9;
+}
+
 .weight {
   font-size: 24px;
   padding-right: 8px;
@@ -6,32 +11,37 @@
 .repInput {
   width: 64px;
   height: 36px;
-  background-color: #e6cde9;
+  background-color: var(--lilac);
   font-size: 24px;
   font-family: inherit;
-  border-color: #9c27b0;
+  border-color: var(--purple);
   border-style: solid;
 }
 
 .title {
-  background-color: #e6cde9;
+  background-color: var(--lilac);
 }
 
 input::placeholder {
   font-weight: normal;
   opacity: 0.5;
-  color: #9c27b0;
+  color: var(--purple);
 }
 
 button {
   height: 72px;
-  background-color: #e6cde9;
+  background-color: var(--lilac);
   font-size: 24px;
   font-family: inherit;
-  border-color: #9c27b0;
+  border-color: var(--purple);
   border-style: solid;
   margin: 8px;
   color: black;
+}
+
+.error {
+  margin-left: 10px;
+  color: var(--purple);
 }
 
 body {
