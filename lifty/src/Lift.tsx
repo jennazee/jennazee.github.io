@@ -64,20 +64,15 @@ export function Lift({ week, liftName, tm }: LiftProps) {
     tm,
   );
   if (liftName === "squat" || liftName === "deadlift") {
-    weights = [
-      ...weights,
-      weights[0],
-      weights[0],
-      weights[0],
-      weights[0],
-      weights[0],
-    ];
+    const fsl = { ...weights[0], reps: 5 };
+    weights = [...weights, fsl, fsl, fsl, fsl, fsl];
   }
   const liftNameForTitle =
     liftName === "shoulder" ? "shoulder press" : liftName;
   return (
     <div className="LiftBox">
       <h2>{liftNameForTitle}</h2>
+      <h3>training max this cycle: {tm} lbs (so strong!)</h3>
       <ol>
         {weights.map(({ weight, reps }, index) => (
           <li>
