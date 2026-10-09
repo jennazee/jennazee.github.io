@@ -28,11 +28,6 @@ type SubmitButtonEventHander = (e: React.SubmitEvent<HTMLFormElement>) => void;
 const lifts = ["deadlift", "squat", "bench", "shoulder"] as const;
 type LiftType = (typeof lifts)[number];
 
-// Using Epley because it's way simpler
-function calculate1RM(weight: number, reps: number) {
-  return weight * ((1 + reps) / 30);
-}
-
 function App() {
   const [deadliftTM, setDeadliftTM] = useState(0);
   const [shoulderTM, setShoulderTM] = useState(0);
